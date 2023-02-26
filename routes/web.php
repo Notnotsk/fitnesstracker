@@ -14,7 +14,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::resource('workouts', FitnessController::class)
-    ->only(['index', 'store'])
+    ->only(['index', 'store', 'create', 'show', 'update', 'destroy','edit'])
     ->middleware(['auth', 'verified']);
 
 Route::middleware('auth')->group(function () {
