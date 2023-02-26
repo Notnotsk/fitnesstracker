@@ -13,7 +13,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::resource('logs', FitnessController::class)
+Route::resource('workouts', FitnessController::class)
     ->only(['index', 'store'])
     ->middleware(['auth', 'verified']);
 

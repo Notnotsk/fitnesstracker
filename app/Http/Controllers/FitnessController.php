@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\fitness;
+use App\Models\workouts;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response; 
 
@@ -11,14 +12,11 @@ class FitnessController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): Response
+    public function index()
     {
-        return response('Hello, World!');
+        return Workouts::all();
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         //
