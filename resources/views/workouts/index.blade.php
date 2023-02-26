@@ -8,8 +8,8 @@
     <div>
         <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
             @foreach ($workouts as $workout)
-                {{$workout}}
-
+               <div>{{ $workout }}</div> 
+            @endforeach
         </div>
         </div>
     </div>
