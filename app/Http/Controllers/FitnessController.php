@@ -25,6 +25,11 @@ class FitnessController extends Controller
     public function store()
     {
         return request()->all();
+        $validated = request()->validate([
+            'date' => 'required|date',
+        ]);
+
+        Workouts::create($validated);
     }
 
     /**
