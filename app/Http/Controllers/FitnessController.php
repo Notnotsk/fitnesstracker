@@ -14,7 +14,10 @@ class FitnessController extends Controller
      */
     public function index()
     {
-        return Workouts::all();
+        $workouts = Workouts::all();
+        return view ('workouts.index', [
+            'workouts' => $workouts, 
+        ]);
     }
 
     public function create()
@@ -30,6 +33,7 @@ class FitnessController extends Controller
         ]);
 
         Workouts::create($validated);
+        return redirect('/workouts');
     }
 
     /**
