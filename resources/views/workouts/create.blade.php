@@ -12,8 +12,29 @@
                 <div>
                     <label>Date</label>
                     <input type="date" name="date">
+                <div>
+                    <label>Length</label>
+                    <input type="time" name="length">
                 </div>
-                    <input type="submit" value="Submit">
+                <div>
+                    <label>Body Weight</label>
+                    <input type="number" name="body_weight">
+                </div>
+                <div>
+                    <label>Calories Burned</label>
+                    <input type="number" name="calories_burned">
+                </div>
+                <div>
+                    <label>Music</label>
+                    <input type="text" name="music">
+                </div>
+                <div>
+                    <label>Notes</label>
+                    <textarea name="notes" cols="30" rows="10"></textarea>
+                </div>
+                </div>
+                    <input type="submit" value="Create">
+                
 
             </form>
 
