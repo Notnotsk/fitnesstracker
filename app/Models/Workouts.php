@@ -9,5 +9,17 @@ class Workouts extends Model
 {
     use HasFactory;
 
-    protected $guarded = ["id"];
+    protected $casts = [
+        'date' => 'datetime',
+    ];
+
+    protected $fillable = [
+        'date',
+        'venue',
+        'music',
+        'body_weight',
+        'calories_burned',
+        'length',
+        'notes',
+    ];
 }
