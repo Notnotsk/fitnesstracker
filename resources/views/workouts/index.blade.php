@@ -1,12 +1,16 @@
 <x-app-layout>
     <x-slot name="header">
-        <div>
+        <div class="flex items-center justify-between">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Workouts
             </h2>
+            <a href="workouts/create">
+                <span class="isolate inline-flex rounded-md shadow-sm">
+                <button type="button" class="relative inline-flex items-center rounded-l-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10">Create Workout</button>
+                </span>
+
+            </a>
         </div>
-        <div class="w-5 h-5 bg-blue-500"></div>
-        <div class="w-5 h-5 bg-yellow-500"></div>
     </x-slot>
 
     <div>
