@@ -16,6 +16,7 @@ class Workouts extends Model
     protected $fillable = [
         'date',
         'venue',
+        'week_day',
         'music',
         'body_weight',
         'calories_burned',

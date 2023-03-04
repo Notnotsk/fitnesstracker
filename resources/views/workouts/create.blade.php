@@ -91,13 +91,11 @@
             <textarea id="notes" name="notes" rows="3" value="{{ old('notes')}}" class="block w-full max-w-lg rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6"></textarea>
             <p class="mt-2 text-sm text-gray-500">Write a few sentences about your workout.</p>
           </div>
-          <a href="workouts/create">
+          <a href="/workouts">
                 <span class="isolate inline-flex rounded-md shadow-sm">
-                <button type="button" class="relative inline-flex items-center rounded-l-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10">Create</button>
+                <button type="button" input type="submit" value=create class="relative inline-flex items-center rounded-l-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10">Create</button>
             </span>
-
             </a>
-           
         </div>
       </div>
     </div>
@@ -140,19 +138,3 @@
     </div>
 </x-app-layout>
 
-
-
-<!--
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
--->

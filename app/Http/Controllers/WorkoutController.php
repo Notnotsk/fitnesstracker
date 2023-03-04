@@ -26,6 +26,7 @@ class WorkoutController extends Controller
     {
         $validated = request()->validate([
             'date' => 'required',
+            'week_day' => 'nullable',
             'venue' => 'nullable',
             'length' => 'nullable',
             'music' => 'nullable',
@@ -53,6 +54,7 @@ class WorkoutController extends Controller
     {
         $validated = request()->validate([
             'date' => 'required',
+            'week_day' => 'nullable',
             'venue' => 'nullable',
             'length' => 'nullable',
             'music' => 'nullable',
