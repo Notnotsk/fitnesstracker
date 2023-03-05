@@ -4,12 +4,11 @@
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Workouts
             </h2>
-            <a href="workouts/create">
-                <span class="isolate inline-flex rounded-md shadow-sm">
-                <button type="button" class="relative inline-flex items-center rounded-l-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10">Create Workout</button>
-                </span>
-
-            </a>
+            <div class="isolate inline-flex rounded-md shadow-sm">
+                <a href="/workouts/create" class="relative inline-flex items-center rounded-l-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10">
+                    Create Workout
+                </a>
+            </div>
         </div>
     </x-slot>
 
@@ -19,7 +18,7 @@
                 <div class="overflow-hidden bg-white shadow sm:rounded-md">
                     <ul role="list" class="divide-y divide-gray-200">
                         <li>
-                            <a href="/workouts/list{{ $workout->id }}" class="block hover:bg-gray-50">
+                            <a href="/workouts/{{ $workout->id }}" class="block hover:bg-gray-50">
                                 <div class="flex items-center px-4 py-4 sm:px-6">
                                     <div class="min-w-0 flex-1 sm:flex sm:items-center sm:justify-between">
                                         <p>{{ $workout->date->toDayDateTimeString() }}</p>

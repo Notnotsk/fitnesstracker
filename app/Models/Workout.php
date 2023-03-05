@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Workouts extends Model
+class Workout extends Model
 {
     use HasFactory;
 
@@ -16,7 +16,7 @@ class Workouts extends Model
     protected $fillable = [
         'date',
         'venue',
-        'week_day',
+        'name',
         'music',
         'body_weight',
         'calories_burned',

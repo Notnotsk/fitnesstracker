@@ -2,17 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\fitness;
-use App\Models\workouts;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response; 
+use App\Models\Workout;
 
 class WorkoutController extends Controller
 {
     public function index()
     {
-        $workouts = Workouts::all();
-        return view ('workouts.index', [
+        $workouts = Workout::all();
+
+        return view('workouts.index', [
             'workouts' => $workouts, 
         ]);
     }
@@ -26,45 +24,44 @@ class WorkoutController extends Controller
     {
         $validated = request()->validate([
             'date' => 'required',
-            'week_day' => 'nullable',
-            'venue' => 'nullable',
-            'length' => 'nullable',
+            'name' => 'nullable',
             'music' => 'nullable',
+            'venue' => 'nullable',
             'body_weight' => 'nullable',
             'calories_burned' => 'nullable',
-            'notes' => 'nullable'
+            'length' => 'nullable',
+            'notes' => 'nullable',
         ]);
 
-        Workouts::create($validated);
+        Workout::create($validated);
         
         return redirect('/workouts');
     }
 
-    public function show(fitness $fitness)
+    public function show($id)
     {
-        //
-    }
+        $workout = Workout::find($id);
 
-    public function edit(fitness $fitness)
-    {
-        //
-    }
-
-    public function update(Request $request, fitness $fitness)
-    {
-        $validated = request()->validate([
-            'date' => 'required',
-            'week_day' => 'nullable',
-            'venue' => 'nullable',
-            'length' => 'nullable',
-            'music' => 'nullable',
-            'body_weight' => 'nullable',
-            'calories_burned' => 'nullable',
-            'notes' => 'nullable'
+        return view('workouts.show', [
+            'workout' => $workout,
         ]);
     }
 
-    public function destroy(fitness $fitness)
+    public function edit($id)
+    {
+        $workout = Workout::find($id);
+
+        return view('workouts.edit', [
+            'workout' => $workout,
+        ]);
+    }
+
+    public function update($id)
+    {
+        // 
+    }
+
+    public function destroy($id)
     {
         //
     }
