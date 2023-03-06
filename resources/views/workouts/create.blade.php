@@ -35,13 +35,13 @@
             </div>
                 <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
                     <label for="name" class="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5">Name</label>
-                    <div class="mt-2 sm:col-span-2 sm:mt-0">
+                    <div class="mt-2 sm:col-span-2 sm:mt-0 mb-4">
                     <input type="text" name="name" id="name" autocomplete="name" value="{{ old('name')}}" class="block w-full max-w-lg rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6" placeholder="Routine/Week/Day">
                     </div>
                 </div>
                 <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
                     <label for="venue" class="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5">Venue</label>
-                    <div class="mt-2 sm:col-span-2 sm:mt-0">
+                    <div class="mt-2 sm:col-span-2 sm:mt-0 mb-4">
                         <select id="venue" name="venue" autocomplete="venue" class="block w-full max-w-lg rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
                             <option>Gym</option>
                             <option>Home</option>
@@ -51,19 +51,19 @@
                 </div>
                 <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
                     <label for="body_weight" class="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5">Body Weight</label>
-                    <div class="mt-2 sm:col-span-2 sm:mt-0">
+                    <div class="mt-2 sm:col-span-2 sm:mt-0 mb-4">
                     <input type="number" name="body_weight" id="body_weight" autocomplete="body_weight" value="{{ old('body_weight')}}" class="block w-full max-w-lg rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6" placeholder="lbs">
                     </div>
                 </div>
                 <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
                     <label for="calories_burned" class="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5">Calories Burned</label>
-                    <div class="mt-2 sm:col-span-2 sm:mt-0">
+                    <div class="mt-2 sm:col-span-2 sm:mt-0 mb-4">
                         <input type="number" name="calories_burned" id="calories_burned" autocomplete="calories_burned" value="{{ old('calories_burned')}}" class="block w-full max-w-lg rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
                     </div>
                 </div>
                 <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
                     <label for="music" class="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5">Music</label>
-                    <div class="mt-2 sm:col-span-2 sm:mt-0">
+                    <div class="mt-2 sm:col-span-2 sm:mt-0 mb-4">
                         <input type="text" name="music" id="music" autocomplete="music" value="{{ old('music')}}" class="block w-full max-w-lg rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
                     </div>
                 </div>

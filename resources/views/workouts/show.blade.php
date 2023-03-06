@@ -2,7 +2,7 @@
 <x-slot name="header">
 		<div class="flex items-center justify-between">
 			<h2 class="font-semibold text-xl text-gray-800 leading-tight">
-				Workout
+				Workout Information
 			</h2>
 			<div class="isolate inline-flex rounded-md shadow-sm">
 				<a href="/workouts/{{ $workout->id }}/edit" class="relative inline-flex items-center rounded-l-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10">
@@ -12,10 +12,10 @@
 		</div>
 	</x-slot>
 
-<div>
+<!-- <div>
   <h3 class="text-base p-5 font-semibold leading-6 text-gray-900">Workout Information</h3>
-</div>
-	<div class="mt-5 p-5 border-t border-gray-200">
+</div> -->
+	<div class="mt-0 p-5 border-t border-gray-200">
 		<dl class="divide-y divide-gray-200">
 		@if ($workout->date)
 		<div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
