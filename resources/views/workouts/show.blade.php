@@ -15,28 +15,28 @@
 <div>
   <h3 class="text-base p-5 font-semibold leading-6 text-gray-900">Workout Information</h3>
 </div>
-<div class="mt-5 p-5 border-t border-gray-200">
-  <dl class="divide-y divide-gray-200">
-  	@if ($workout->date)
-	<div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
-	  <dt class="text-sm font-medium text-gray-500">Date</dt>
-	  <dd class="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-		<span class="flex-grow">{{ $workout ->date }}</span>
-		<span class="ml-4 flex-shrink-0">
-		  <button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Update</button>
-		</span>
-	  </dd>
+	<div class="mt-5 p-5 border-t border-gray-200">
+		<dl class="divide-y divide-gray-200">
+		@if ($workout->date)
+		<div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
+		<dt class="text-sm font-medium text-gray-500">Date</dt>
+		<dd class="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+			<span class="flex-grow">{{ $workout ->date }}</span>
+			<span class="ml-4 flex-shrink-0">
+			<button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Update</button>
+			</span>
+		</dd>
 	</div>
 	@endif
 	@if ($workout->length)
-	<div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
-	  <dt class="text-sm font-medium text-gray-500">Length</dt>
-	  <dd class="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-		<span class="flex-grow">{{ $workout->length }}</span>
-		<span class="ml-4 flex-shrink-0">
-		  <button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Update</button>
-		</span>
-	  </dd>
+		<div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
+		<dt class="text-sm font-medium text-gray-500">Length</dt>
+		<dd class="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+			<span class="flex-grow">{{ $workout->length }}</span>
+			<span class="ml-4 flex-shrink-0">
+			<button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Update</button>
+			</span>
+		</dd>
 	</div>
 	@endif
 	@if ($workout->name)
@@ -110,8 +110,7 @@
 	  </dd>
 	</div>
   </dl>
-</div>
-	<a href="/exercises/create?workout_id=1">
+	<!-- <a href="/exercises/create?workout_id=1">
 		Add Exercise
-	</a>
+	</a> -->
 </x-app-layout>    
