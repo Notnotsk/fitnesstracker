@@ -111,58 +111,6 @@
 	</div>
   </dl>
 </div>
-
-
-	<div>
-		<h2>Date</h2>
-		<p>{{ $workout->date }}</p>
-	</div>
-	@if ($workout->name)
-		<div>
-			<h2>Name</h2>
-			<p>{{ $workout->name }}</p>
-		</div>
-	@endif
-	@if ($workout->venue)
-		<div>
-			<h2>Venue</h2>
-			<p>{{ $workout->venue }}</p>
-		</div>
-	@endif
-	@if ($workout->music)
-		<div>
-			<h2>Music</h2>
-			<p>{{ $workout->music }}</p>
-		</div>
-	@endif
-	@if ($workout->calories_burned)
-		<div>
-			<h2>calories_burned</h2>
-			<p>{{ $workout->calories_burned }}</p>
-		</div>
-	@endif
-	@if ($workout->body_weight)
-		<div>
-			<h2>body_weight</h2>
-			<p>{{ $workout->body_weight }}</p>
-		</div>
-	@endif
-	@if ($workout->length)
-		<div>
-			<h2>length</h2>
-			<p>{{ $workout->length }}</p>
-		</div>
-	@endif
-	@if ($workout->notes)
-		<div>
-			<h2>notes</h2>
-			<p>{{ $workout->notes }}</p>
-		</div>
-	@endif
-
-	<hr>
-
-	<h3>Exercises</h3>
 	<a href="/exercises/create?workout_id=1">
 		Add Exercise
 	</a>
