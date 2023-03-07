@@ -1,138 +1,86 @@
-<!-- <x-app-layout>
-    <div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
-        <form method="POST" action="{{ route('workouts.update', $workout) }}">
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            Workouts
+        </h2>
+    </x-slot>
+
+    <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        <form action="/workouts/{{ $workout->id }}" method="post">
             @csrf
             @method('patch')
-            <textarea
-                name="message"
-                class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
-            >{{ old('message', $workout->message) }}</textarea>
-            <x-input-error :messages="$errors->get('message')" class="mt-2" />
-            <div class="mt-4 space-x-2">
-                <x-primary-button>{{ __('Save') }}</x-primary-button>
-                <a href="{{ route('workouts.index') }}">{{ __('Cancel') }}</a>
+            <div class="space-y-6 sm:space-y-5">
+                <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
+                    <label for="date" class="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5">Date</label>
+                    <div class="mt-2 sm:col-span-2 sm:mt-0">
+                        <input type="datetime-local" name="date" id="date" value="{{ $workout->date }}" class="block w-full max-w-lg rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                    </div>
+                </div>
+                <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
+                    <label for="length" class="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5">Length</label>
+                    <div class="mt-2 sm:col-span-2 sm:mt-0 mb-4"> 
+                        <input type="number" name="length" id="length" autocomplete="length" value="{{ $workout->length }}" class="block w-full max-w-lg rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6" placeholder="minutes">
+                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
+                    <label for="name" class="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5">Name</label>
+                    <div class="mt-2 sm:col-span-2 sm:mt-0 mb-4">
+                    <input type="text" name="name" id="name" autocomplete="name" value="{{ $workout->name }}" class="block w-full max-w-lg rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6" placeholder="Routine/Week/Day">
+                    </div>
+                </div>
+                <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
+                    <label for="venue" class="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5">Venue</label>
+                    <div class="mt-2 sm:col-span-2 sm:mt-0 mb-4">
+                    <input type="text" name="venue" id="venue" autocomplete="venue" value="{{ $workout->venue }}" class="block w-full max-w-lg rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6" placeholder="Routine/Week/Day">
+                    </div>
+                </div>
+                <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
+                    <label for="body_weight" class="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5">Body Weight</label>
+                    <div class="mt-2 sm:col-span-2 sm:mt-0 mb-4">
+                    <input type="number" name="body_weight" id="body_weight" autocomplete="body_weight" value="{{ $workout->body_weight }}" class="block w-full max-w-lg rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6" placeholder="lbs">
+                    </div>
+                </div>
+                <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
+                    <label for="calories_burned" class="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5">Calories Burned</label>
+                    <div class="mt-2 sm:col-span-2 sm:mt-0 mb-4">
+                        <input type="number" name="calories_burned" id="calories_burned" autocomplete="calories_burned" value="{{ $workout->calories_burned }}" class="block w-full max-w-lg rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                    </div>
+                </div>
+                <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
+                    <label for="music" class="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5">Music</label>
+                    <div class="mt-2 sm:col-span-2 sm:mt-0 mb-4">
+                        <input type="text" name="music" id="music" autocomplete="music" value="{{ $workout->music }}" class="block w-full max-w-lg rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                    </div>
+                </div>
+                <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
+                    <label for="notes" class="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5">Notes</label>
+                    <div class="mt-2 sm:col-span-2 sm:mt-0">
+                        <textarea id="notes" name="notes" rows="3" class="block w-full max-w-lg rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6">{{ $workout->notes }}</textarea>
+                        <p class="mt-2 text-sm text-gray-500">Write a few sentences about your workout.</p>
+                    </div>
+                </div>
+                <div class="sm:pt-5">
+                    <div class="flex justify-end gap-x-3">
+                        <a href="/workouts" class="block rounded-md bg-white py-2 px-3 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+                            Cancel
+                        </a>
+                        <button type="submit" class="inline-flex justify-center rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                            Save</button>
+                    </div>
+                </div>
             </div>
         </form>
     </div>
 </x-app-layout>
-
-<x-app-layout>
-<x-slot name="header">
-		<div class="flex items-center justify-between">
-			<h2 class="font-semibold text-xl text-gray-800 leading-tight">
-				Workout Information
-			</h2>
-			<div class="isolate inline-flex rounded-md shadow-sm">
-				<a href="/workouts/{{ $workout->id }}/edit" class="relative inline-flex items-center rounded-l-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10">
-					Edit Workout
-				</a>
-			</div>
-		</div>
-	</x-slot> -->
-
-<!-- <div>
-  <h3 class="text-base p-5 font-semibold leading-6 text-gray-900">Workout Information</h3>
-</div> -->
-	<div class="mt-0 p-5 border-t border-gray-200">
-        <form method="POST" action="{{ route('workouts.update', $workout) }}">
-                @csrf
-                @method('patch')
-            <dl class="divide-y divide-gray-200">
-            @if ($workout->date)
-            <div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
-            <dt class="text-sm font-medium text-gray-500">Date</dt>
-            <dd class="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-                <span class="flex-grow">{{ $workout ->date }}</span>
-                <span class="ml-4 flex-shrink-0">
-                <button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Update</button>
-                </span>
-            </dd>
-        </form>
-	</div>
-	@endif
-	@if ($workout->length)
-		<div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
-		<dt class="text-sm font-medium text-gray-500">Length</dt>
-		<dd class="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-			<span class="flex-grow">{{ $workout->length }}</span>
-			<span class="ml-4 flex-shrink-0">
-			<button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Update</button>
-			</span>
-		</dd>
-	</div>
-	@endif
-	@if ($workout->name)
-	<div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
-	  <dt class="text-sm font-medium text-gray-500">Name</dt>
-	  <dd class="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-		<span class="flex-grow">{{ $workout->name }}</span>
-		<span class="ml-4 flex-shrink-0">
-		  <button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Update</button>
-		</span>
-	  </dd>
-	</div>
-	@endif
-	@if ($workout->venue)
-	<div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
-	  <dt class="text-sm font-medium text-gray-500">Venue</dt>
-	  <dd class="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-		<span class="flex-grow">{{ $workout->venue }}</span>
-		<span class="ml-4 flex-shrink-0">
-		  <button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Update</button>
-		</span>
-	  </dd>
-	</div>
-	@endif
-	@if ($workout->body_weight)
-	<div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
-	  <dt class="text-sm font-medium text-gray-500">Body Weight</dt>
-	  <dd class="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-		<span class="flex-grow">{{ $workout->body_weight }}</span>
-		<span class="ml-4 flex-shrink-0">
-		  <button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Update</button>
-		</span>
-	  </dd>
-	</div>
-	@endif
-	@if ($workout->calories_burned)
-	<div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
-	  <dt class="text-sm font-medium text-gray-500">Calories Burned</dt>
-	  <dd class="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-		<span class="flex-grow">{{ $workout->calories_burned }}</span>
-		<span class="ml-4 flex-shrink-0">
-		  <button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Update</button>
-		</span>
-	  </dd>
-	</div>
-	@endif
-	@if ($workout->music)
-	<div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
-	  <dt class="text-sm font-medium text-gray-500">Music</dt>
-	  <dd class="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-		<span class="flex-grow">{{ $workout->music }}</span>
-		<span class="ml-4 flex-shrink-0">
-		  <button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Update</button>
-		</span>
-	  </dd>
-	</div>
-	@endif
-	@if ($workout->notes)
-	<div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
-	  <dt class="text-sm font-medium text-gray-500">Notes</dt>
-	  <dd class="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-		<span class="flex-grow">{{ $workout->notes }}</span>
-		<span class="ml-4 flex-shrink-0">
-		  <button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Update</button>
-		</span>
-	  </dd>
-	</div>
-	@endif
-		  </li>
-		</ul>
-	  </dd>
-	</div>
-  </dl>
-	<!-- <a href="/exercises/create?workout_id=1">
-		Add Exercise
-	</a> -->
-</x-app-layout>    

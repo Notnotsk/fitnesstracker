@@ -58,11 +58,28 @@ class WorkoutController extends Controller
 
     public function update($id)
     {
-        // 
+        $validated = request()->validate([
+            'date' => 'required',
+            'name' => 'nullable',
+            'music' => 'nullable',
+            'venue' => 'nullable',
+            'body_weight' => 'nullable',
+            'calories_burned' => 'nullable',
+            'length' => 'nullable',
+            'notes' => 'nullable',
+        ]);
+
+        $workout = Workout::find($id);
+        $workout->update($validated);
+        
+        return redirect('/workouts/' . $id);
     }
 
     public function destroy($id)
     {
-        //
+        $workout = Workout::find($id);
+        $workout->delete();
+
+        return redirect('/workouts');
     }
 }
