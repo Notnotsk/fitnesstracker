@@ -21,7 +21,7 @@
 					<dd class="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
 						<span class="flex-grow">{{ $workout ->date }}</span>
 						<span class="ml-4 flex-shrink-0">
-							<button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Update</button>
+							<button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"></button>
 						</span>
 					</dd>
 				</div>
@@ -32,7 +32,7 @@
 					<dd class="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
 						<span class="flex-grow">{{ $workout->length }}</span>
 						<span class="ml-4 flex-shrink-0">
-							<button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Update</button>
+							<button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"></button>
 						</span>
 					</dd>
 				</div>
@@ -43,7 +43,7 @@
 					<dd class="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
 						<span class="flex-grow">{{ $workout->name }}</span>
 						<span class="ml-4 flex-shrink-0">
-							<button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Update</button>
+							<button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"></button>
 						</span>
 					</dd>
 				</div>
@@ -54,7 +54,7 @@
 			<dd class="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
 				<span class="flex-grow">{{ $workout->venue }}</span>
 				<span class="ml-4 flex-shrink-0">
-				<button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Update</button>
+				<button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"></button>
 				</span>
 			</dd>
 			</div>
@@ -65,7 +65,7 @@
 			<dd class="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
 				<span class="flex-grow">{{ $workout->body_weight }}</span>
 				<span class="ml-4 flex-shrink-0">
-				<button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Update</button>
+				<button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"></button>
 				</span>
 			</dd>
 			</div>
@@ -76,7 +76,7 @@
 			<dd class="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
 				<span class="flex-grow">{{ $workout->calories_burned }}</span>
 				<span class="ml-4 flex-shrink-0">
-				<button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Update</button>
+				<button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"></button>
 				</span>
 			</dd>
 			</div>
@@ -87,7 +87,7 @@
 			<dd class="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
 				<span class="flex-grow">{{ $workout->music }}</span>
 				<span class="ml-4 flex-shrink-0">
-				<button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Update</button>
+				<button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"></button>
 				</span>
 			</dd>
 			</div>
@@ -98,7 +98,7 @@
 			<dd class="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
 				<span class="flex-grow">{{ $workout->notes }}</span>
 				<span class="ml-4 flex-shrink-0">
-				<button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Update</button>
+				<button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"></button>
 				</span>
 			</dd>
 			</div>
