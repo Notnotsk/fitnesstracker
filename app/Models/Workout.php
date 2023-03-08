@@ -23,4 +23,11 @@ class Workout extends Model
         'length',
         'notes',
     ];
+
+    public function exercises()
+    {
+        return $this->belongsToMany(Exercise::class)
+            ->withPivot('notes')
+            ->withTimestamps();
+    }
 }

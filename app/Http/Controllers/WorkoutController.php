@@ -40,7 +40,7 @@ class WorkoutController extends Controller
 
     public function show($id)
     {
-        $workout = Workout::find($id);
+        $workout = Workout::with('exercises')->find($id);
 
         return view('workouts.show', [
             'workout' => $workout,

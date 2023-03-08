@@ -109,7 +109,22 @@
 			</div>
   		</dl>
 
-	<a href="/exercises/create?workout_id={{ $workout->id }}">Add Exercise</a>
+	<a href="/workouts/{{ $workout->id }}/exercises/create">Add Exercise</a>
+	<ul class="list-disc">
+		@foreach ($workout->exercises as $exercise)
+			<li class="mt-2">
+				<div class="flex items-center space-x-2">
+					<div>
+						<button class="text-red-500">X</button>
+					</div>
+					<div>
+						<p>{{ $exercise->name }}</p>
+						<div>{{ $exercise->pivot->notes }}</div>
+					</div>
+				</div>
+			</li>
+		@endforeach
+	</ul>
 
 	<form action="/workouts/{{ $workout->id }}" method="post">
 		@csrf 

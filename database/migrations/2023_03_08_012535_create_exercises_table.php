@@ -13,6 +13,16 @@ return new class extends Migration
     {
         Schema::create('exercises', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->text('description')->nullable();
+            $table->timestamps();
+        });
+
+        Schema::create('exercise_workout', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedInteger('exercise_id');
+            $table->unsignedInteger('workout_id');
+            $table->text('notes')->nullable();
             $table->timestamps();
         });
     }
