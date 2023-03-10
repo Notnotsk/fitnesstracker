@@ -16,7 +16,7 @@ Route::middleware('auth')->group(function () {
     })->name('dashboard');
 
     Route::resource('workouts', WorkoutController::class);
-    Route::resource('exercise', ExerciseController::class);
+    Route::resource('exercises', ExerciseController::class);
     Route::resource('workouts/{workout}/exercises', WorkoutExerciseController::class);
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

@@ -18,7 +18,7 @@ class ExerciseController extends Controller
 
     public function create()
     {
-        //
+        return view('exercises.create');
     }
 
     public function store(Request $request)
