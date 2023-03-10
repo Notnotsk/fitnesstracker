@@ -21,9 +21,18 @@ class ExerciseController extends Controller
         return view('exercises.create');
     }
 
-    public function store(Request $request)
+    public function store()
     {
-        //
+        $validated = request()->validate([
+            'date' => 'required',
+            'equipment' => 'nullable',
+            'muscle' => 'nullable',
+            'size' => 'nullable',
+        ]);
+
+        Workout::create($validated);
+        
+        return redirect('/workouts');
     }
 
     public function show(Exercise $exercise)
