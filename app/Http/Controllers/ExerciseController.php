@@ -27,6 +27,7 @@ class ExerciseController extends Controller
             'date' => 'required',
             'equipment' => 'nullable',
             'muscle' => 'nullable',
+            'auxiliary' => 'nullable',
             'size' => 'nullable',
         ]);
 
