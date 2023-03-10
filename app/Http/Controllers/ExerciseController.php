@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Exercise;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class ExerciseController extends Controller
@@ -21,19 +22,19 @@ class ExerciseController extends Controller
         return view('exercises.create');
     }
 
-    public function store()
+    public function store(Request $request): RedirectResponse
     {
-        $validated = request()->validate([
-            'date' => 'required',
+        $validated = $request->validate([ 
+            'name' => 'required',
             'equipment' => 'nullable',
             'muscle' => 'nullable',
             'auxiliary' => 'nullable',
             'size' => 'nullable',
         ]);
-
-        Workout::create($validated);
         
-        return redirect('/workouts');
+        Exercise::create($validated->all($id));
+        
+        return redirect('/exercises');
     }
 
     public function show(Exercise $exercise)
