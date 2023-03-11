@@ -11,7 +11,7 @@ class ExerciseController extends Controller
     public function index()
     {
         $exercises = Exercise::all();
-
+        
         return view('exercises.index', [
             'exercises' => $exercises,
         ]);
@@ -19,27 +19,48 @@ class ExerciseController extends Controller
 
     public function create()
     {
-        return view('exercises.create');
+        $muscles = [
+            'Abductors',
+            'Abs',
+            'Adductors',
+            'Biceps',
+            'Calves',
+            'Chest',
+            'Forearms',
+            'Front Delts',
+            'Glutes',
+            'Hams',
+            'Lats',
+            'Lower Back',
+            'Quads',
+            'Rear Delts',
+            'Side Delts',
+            'Traps',
+            'Triceps',
+            'Upper Back',
+        ];
+
+        return view('exercises.create', [
+            'muscles' => $muscles,
+        ]);
     }
 
-    public function store(Request $request): RedirectResponse
+    public function store()
     {
-        $validated = $request->validate([ 
+        $validated = request()->validate([ 
             'name' => 'required',
-            'equipment' => 'nullable',
-            'muscle' => 'nullable',
-            'auxiliary' => 'nullable',
+            'muscles' => 'nullable',
             'size' => 'nullable',
         ]);
         
-        Exercise::create($validated->all($id));
+        Exercise::create($validated);
         
         return redirect('/exercises');
     }
 
     public function show(Exercise $exercise)
     {
-        //
+
     }
 
     public function edit(Exercise $exercise)

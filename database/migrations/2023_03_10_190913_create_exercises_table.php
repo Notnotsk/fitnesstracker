@@ -14,9 +14,7 @@ return new class extends Migration
         Schema::create('exercises', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('equipment')->nullable();
-            $table->string('muscle')->nullable();
-            $table->string('auxiliary')->nullable();
+            $table->json('muscles')->nullable();
             $table->string('size')->nullable();
             $table->timestamps();
         });
@@ -36,5 +34,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('exercises');
+
+        Schema::dropIfExists('exercise_workout');
     }
 };

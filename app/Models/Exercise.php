@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Exercise extends Model
 {
     use HasFactory;
+
+    protected $casts = [
+        'muscles' => 'array',
+    ];
+
+    protected $fillable = [
+        'name',
+        'muscles',
+        'size',
+    ];
 }

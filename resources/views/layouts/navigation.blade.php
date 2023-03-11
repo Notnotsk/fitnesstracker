@@ -18,6 +18,9 @@
                     <x-nav-link :href="route('workouts.index')" :active="request()->routeIs('workouts.index')">
                         Workouts
                     </x-nav-link>
+                    <x-nav-link :href="route('exercises.index')" :active="request()->routeIs('exercises.index')">
+                        Exercises
+                    </x-nav-link>
                 </div>
             </div>
 
