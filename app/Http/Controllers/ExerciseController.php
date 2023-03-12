@@ -74,7 +74,7 @@ class ExerciseController extends Controller
         $exercise = Exercise::find($id);
 
         return view('exercises.edit', [
-            'exercises' => $exercises,
+            'exercise' => $exercise,
         ]);
     }
 
