@@ -58,9 +58,13 @@ class ExerciseController extends Controller
         return redirect('/exercises');
     }
 
-    public function show(Exercise $exercise)
+    public function show($id)
     {
+        $exercise = Exercise::find($id);
 
+        return view('exercises.show', [
+            'exercises' => $exercise,
+        ]);
     }
 
     public function edit(Exercise $exercise)
