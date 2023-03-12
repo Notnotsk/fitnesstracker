@@ -5,7 +5,7 @@
 				Exercise Information
 			</h2>
 			<div class="isolate inline-flex rounded-md shadow-sm">
-				<a href="/exercises/{{ $exercises->id }}/edit" class="relative inline-flex items-center rounded-l-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10">
+				<a href="/exercises/{{ $exercise->id }}/edit" class="relative inline-flex items-center rounded-l-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10">
 					Edit Exercise
 				</a>
 			</div>
@@ -13,49 +13,36 @@
 	</x-slot>
 
 
-	<div class="mt-0 p-5 border-t border-gray-200">
+    <div class="mt-0 p-5 border-t border-gray-200">
 		<dl class="divide-y divide-gray-200">
-			@if ($exercises->name)
+			@if ($exercise->name)
 				<div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
 					<dt class="text-sm font-medium text-gray-500">Name</dt>
 					<dd class="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-						<span class="flex-grow">{{ $exercises->name }}</span>
+						<span class="flex-grow">{{ $exercise->name }}</span>
 						<span class="ml-4 flex-shrink-0">
 							<button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"></button>
 						</span>
 					</dd>
 				</div>
 			@endif
-        </dl>
-    </div>
-    <div class="mt-0 p-5 border-t border-gray-200">
-		<dl class="divide-y divide-gray-200">
-			@if ($exercises->muscles)
-				<div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
-					<dt class="text-sm font-medium text-gray-500">Muscles</dt>
-					<dd class="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-						<span class="flex-grow">{{ $exercises->muscles }}</span>
-						<span class="ml-4 flex-shrink-0">
-							<button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"></button>
-						</span>
-					</dd>
-				</div>
-			@endif
-        </dl>
-    </div>
-    <div class="mt-0 p-5 border-t border-gray-200">
-		<dl class="divide-y divide-gray-200">
-			@if ($exercises->size)
+			@if ($exercise->size)
 				<div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
 					<dt class="text-sm font-medium text-gray-500">Size</dt>
 					<dd class="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-						<span class="flex-grow">{{ $exercises->size }}</span>
+						<span class="flex-grow">{{ $exercise->size }}</span>
 						<span class="ml-4 flex-shrink-0">
 							<button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"></button>
 						</span>
 					</dd>
 				</div>
-            @endif
-        </dl>
-    </div>
-  		
+			@endif
+  		</dl>
+	</div>
+   
+    <form action="/exercises/{{ $exercise->id }}" method="post">
+		@csrf 
+		@method('delete')
+		<input type="submit" value="Delete" class="inline-flex justify-center rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+	</form>
+</x-app-layout>    

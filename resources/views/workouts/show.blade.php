@@ -93,21 +93,18 @@
 			</div>
 			@endif
 			@if ($workout->notes)
-			<div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
-			<dt class="text-sm font-medium text-gray-500">Notes</dt>
-			<dd class="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-				<span class="flex-grow">{{ $workout->notes }}</span>
-				<span class="ml-4 flex-shrink-0">
-				<button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"></button>
-				</span>
-			</dd>
-			</div>
+				<div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
+				<dt class="text-sm font-medium text-gray-500">Notes</dt>
+				<dd class="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+					<span class="flex-grow">{{ $workout->notes }}</span>
+					<span class="ml-4 flex-shrink-0">
+					<button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"></button>
+					</span>
+				</dd>
+				</div>
 			@endif
-				</li>
-				</ul>
-			</dd>
-			</div>
   		</dl>
+	</div>
 
 	<a href="/workouts/{{ $workout->id }}/exercises/create">Add Exercise</a>
 	<ul class="list-disc">
@@ -126,9 +123,11 @@
 		@endforeach
 	</ul>
 
-	<form action="/workouts/{{ $workout->id }}" method="post">
-		@csrf 
-		@method('delete')
-		<input type="submit" value="Delete">
-	</form>
-</x-app-layout>    
+	<div class="mt-4">
+		<form action="/workouts/{{ $workout->id }}" method="post">
+			@csrf 
+			@method('delete')
+			<input type="submit" value="Delete" class="inline-flex justify-center rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+		</form>
+	</div>
+</x-app-layout>

@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Exercise;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-
 class ExerciseController extends Controller
 {
     public function index()
@@ -63,8 +62,11 @@ class ExerciseController extends Controller
         $exercise = Exercise::find($id);
 
         return view('exercises.show', [
-            'exercises' => $exercises,
+            'exercise' => $exercise,
         ]);
+
+        // return view('exercises.show', compact ('exercise'));
+
     }
 
     public function edit($id)
@@ -81,8 +83,11 @@ class ExerciseController extends Controller
         //
     }
 
-    public function destroy(Exercise $exercise)
+    public function destroy($id)
     {
-        //
+        $exercise = Exercise::find($id);
+        $exercise->delete();
+
+        return redirect('/exercises');
     }
 }
