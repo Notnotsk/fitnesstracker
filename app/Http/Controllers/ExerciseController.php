@@ -64,9 +64,6 @@ class ExerciseController extends Controller
         return view('exercises.show', [
             'exercise' => $exercise,
         ]);
-
-        // return view('exercises.show', compact ('exercise'));
-
     }
 
     public function edit($id)
