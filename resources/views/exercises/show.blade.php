@@ -11,8 +11,6 @@
 			</div>
 		</div>
 	</x-slot>
-
-
     <div class="mt-0 p-5 border-t border-gray-200">
 		<dl class="divide-y divide-gray-200">
 			@if ($exercise->name)
@@ -23,6 +21,16 @@
 						<span class="ml-4 flex-shrink-0">
 							<button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"></button>
 						</span>
+					</dd>
+				</div>
+			@endif
+			@if (count($exercise->muscles))
+				<div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
+					<dt class="text-sm font-medium text-gray-500">Muscles</dt>
+					<dd class="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+						@foreach ($exercise->muscles as $muscle)
+							<span class="">{{ $muscle }}</span>,&nbsp;
+						@endforeach
 					</dd>
 				</div>
 			@endif
@@ -39,7 +47,6 @@
 			@endif
   		</dl>
 	</div>
-   
     <form action="/exercises/{{ $exercise->id }}" method="post">
 		@csrf 
 		@method('delete')

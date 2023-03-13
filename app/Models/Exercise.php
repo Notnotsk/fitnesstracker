@@ -18,4 +18,28 @@ class Exercise extends Model
         'muscles',
         'size',
     ];
+
+    public function getMuscles()
+    {
+        return [
+            'Abductors',
+            'Abs',
+            'Adductors',
+            'Biceps',
+            'Calves',
+            'Chest',
+            'Forearms',
+            'Front Delts',
+            'Glutes',
+            'Hams',
+            'Lats',
+            'Lower Back',
+            'Quads',
+            'Rear Delts',
+            'Side Delts',
+            'Traps',
+            'Triceps',
+            'Upper Back',
+        ];
+    }
 }

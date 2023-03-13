@@ -3,13 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Exercise;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
+
 class ExerciseController extends Controller
 {
     public function index()
     {
-        $exercises = Exercise::all();
+        $exercises = Exercise::orderBy('name')->get();
         
         return view('exercises.index', [
             'exercises' => $exercises,
@@ -25,6 +24,7 @@ class ExerciseController extends Controller
             'Biceps',
             'Calves',
             'Chest',
+            'Dick',
             'Forearms',
             'Front Delts',
             'Glutes',
@@ -69,9 +69,11 @@ class ExerciseController extends Controller
     public function edit($id)
     {
         $exercise = Exercise::find($id);
+        $muscles = $exercise->getMuscles();
 
         return view('exercises.edit', [
             'exercise' => $exercise,
+            'muscles' => $muscles,
         ]);
     }
 
