@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WorkoutController;
 use App\Http\Controllers\ExerciseController;
+use App\Http\Controllers\SetController;
 use App\Http\Controllers\WorkoutExerciseController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,6 +18,7 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('workouts', WorkoutController::class);
     Route::resource('exercises', ExerciseController::class);
+    Route::resource('sets', SetController::class);
     // Route::resource('workouts/{workout}/exercises', WorkoutExerciseController::class);
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
