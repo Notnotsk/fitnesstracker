@@ -26,17 +26,17 @@ class SetController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store()
     {
         $validated = request()->validate([ 
             'name' => 'required',
             'weight' => 'nullable',
-            'reps' => 'nullable',
+            'reps' => 'required',
         ]);
         
-        Exercise::create($validated);
+        Set::create($validated);
         
-        return redirect('/exercises');
+        return redirect('/workouts' . $id);
     }
 
     /**
@@ -50,24 +50,40 @@ class SetController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Set $set)
+    public function edit($id)
     {
-        //
+        $set = Set::find($id);
+
+        return view('sets.edit', [
+            'set' => $set,
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Set $set)
+    public function update($id)
     {
-        //
+        $validated = request()->validate([
+            'name' => 'required',
+            'weight' => 'nullable',
+            'reps' => 'required',
+        ]);
+
+        $set = Set::find($id);
+        $set->update($validated);
+        
+        return redirect('/workouts/' . $id);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Set $set)
+    public function destroy($id)
     {
-        //
+        $set = Set::find($id);
+        $set->delete();
+
+        return redirect('/workouts/' . $id);
     }
 }

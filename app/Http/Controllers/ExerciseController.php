@@ -24,7 +24,6 @@ class ExerciseController extends Controller
             'Biceps',
             'Calves',
             'Chest',
-            'Dick',
             'Forearms',
             'Front Delts',
             'Glutes',
