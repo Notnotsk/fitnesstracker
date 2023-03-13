@@ -78,9 +78,18 @@ class ExerciseController extends Controller
         ]);
     }
 
-    public function update(Request $request, Exercise $exercise)
+    public function update($id)
     {
-        //
+        $validated = request()->validate([
+            'name' => 'required',
+            'muscles' => 'nullable',
+            'size' => 'nullable',
+        ]);
+
+        $exercise = Exercise::find($id);
+        $exercise->update($validated);
+        
+        return redirect('/exercises/' . $id);
     }
 
     public function destroy($id)
