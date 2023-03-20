@@ -106,7 +106,7 @@
   		</dl>
 	</div>
 
-	<a href="/workouts/{{ $workout->id }}/exercises/create">Add Exercise</a>
+	<a href="/sets/create" class="relative inline-flex items-center rounded-l-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10">Add Exercise</a>
 	<ul class="list-disc">
 		@foreach ($workout->exercises as $exercise)
 			<li class="mt-2">
