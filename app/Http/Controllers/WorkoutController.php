@@ -8,7 +8,7 @@ class WorkoutController extends Controller
 {
     public function index()
     {
-        $workouts = Workout::all();
+        // $workouts = Workout::all();
         $workouts = Workout::paginate(8);
 
         return view('workouts.index', [
@@ -41,7 +41,9 @@ class WorkoutController extends Controller
 
     public function show($id)
     {
-        $workout = Workout::with('exercises')->find($id);
+        $workout = Workout::with(['exercises.sets' => function ($query) use ($id) {
+            $query->where('workout_id', $id);
+        }])->find($id);
 
         return view('workouts.show', [
             'workout' => $workout,

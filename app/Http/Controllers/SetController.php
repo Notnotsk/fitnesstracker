@@ -29,14 +29,15 @@ class SetController extends Controller
     public function store()
     {
         $validated = request()->validate([ 
-            'name' => 'required',
+            'workout_id' => 'required',
+            'exercise_id' => 'required',
             'weight' => 'nullable',
             'reps' => 'required',
         ]);
         
         Set::create($validated);
         
-        return redirect('/workouts' . $id);
+        return redirect('/workouts/' . $validated['workout_id']);
     }
 
     /**

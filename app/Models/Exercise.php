@@ -42,4 +42,9 @@ class Exercise extends Model
             'Upper Back',
         ];
     }
+    
+    public function sets()
+    {
+        return $this->hasMany(Set::class);
+    }
 }

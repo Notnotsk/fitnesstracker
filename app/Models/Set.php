@@ -10,7 +10,8 @@ class Set extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name',
+        'workout_id',
+        'exercise_id',
         'weight',
         'reps',
     ];

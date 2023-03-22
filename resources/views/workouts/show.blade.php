@@ -106,7 +106,7 @@
   		</dl>
 	</div>
 
-	<a href="/sets/create" class="relative inline-flex items-center rounded-l-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10">Add Exercise</a>
+	<a href="/workouts/{{ $workout->id }}/exercises/create" class="relative inline-flex items-center rounded-l-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10">Add Exercise</a>
 	<ul class="list-disc">
 		@foreach ($workout->exercises as $exercise)
 			<li class="mt-2">
@@ -117,6 +117,15 @@
 					<div>
 						<p>{{ $exercise->name }}</p>
 						<div>{{ $exercise->pivot->notes }}</div>
+					</div>
+					<div>
+						@foreach ($exercise->sets as $set)
+							<a href="/sets/{{ $set->id }}/edit">
+								<span>{{ $set->weight }}</span>
+								<span>{{ $set->reps }}</span>
+							</a>
+						@endforeach
+						<a href="/sets/create?exercise_id={{ $exercise->id }}&workout_id={{ $workout->id }}">Add Set</a>
 					</div>
 				</div>
 			</li>
