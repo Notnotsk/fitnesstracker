@@ -66,7 +66,8 @@ class SetController extends Controller
     public function update($id)
     {
         $validated = request()->validate([
-            'name' => 'required',
+            'workout_id' => 'required',
+            'exercise_id' => 'required',
             'weight' => 'nullable',
             'reps' => 'required',
         ]);
@@ -74,7 +75,7 @@ class SetController extends Controller
         $set = Set::find($id);
         $set->update($validated);
         
-        return redirect('/workouts/' . $id);
+        return redirect('/sets/' . $id);
     }
 
     /**
