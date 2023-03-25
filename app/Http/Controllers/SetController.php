@@ -37,8 +37,7 @@ class SetController extends Controller
         
         Set::create($validated);
         
-        // return redirect('/workouts/' . $validated['workout_id']);
-        return redirect('/workouts/' . $workout->id);
+        return redirect('/workouts/' . $validated['workout_id']);
     }
 
     /**
