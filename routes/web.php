@@ -18,7 +18,7 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('workouts', WorkoutController::class);
     Route::resource('exercises', ExerciseController::class);
-    Route::resource('sets', SetController::class);
+    Route::resource('sets', SetController::class)->except(['index', 'show', 'destroy']);
     Route::name('workouts.')->group(function () {
         Route::resource('workouts/{workout}/exercises', WorkoutExerciseController::class);
     });
@@ -29,4 +29,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

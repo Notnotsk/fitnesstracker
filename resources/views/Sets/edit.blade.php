@@ -6,7 +6,7 @@
     </x-slot>
 
     <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
-        {{-- @if ($errors->any())
+        @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
                     @foreach ($errors->all() as $error)
@@ -14,12 +14,10 @@
                     @endforeach
                 </ul>
             </div>
-        @endif --}}
+        @endif
         <form action="/sets/{{ $set->id }}" method="post">
             @csrf
             @method('patch')
-            <input type="hidden" name="workout_id" value="{{ request('workout_id') }}">
-            <input type="hidden" name="exercise_id" value="{{ request('exercise_id') }}">
             <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
                 <label for="weight" class="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5">Weight</label>
                 <div class="mt-2 sm:col-span-2 sm:mt-0 mb-4">

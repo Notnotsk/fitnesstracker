@@ -11,7 +11,7 @@ class WorkoutController extends Controller
         $workouts = Workout::paginate(8);
 
         return view('workouts.index', [
-            'workouts' => $workouts, 
+            'workouts' => $workouts,
         ]);
     }
 
@@ -34,7 +34,7 @@ class WorkoutController extends Controller
         ]);
 
         Workout::create($validated);
-        
+
         return redirect('/workouts');
     }
 
@@ -73,7 +73,7 @@ class WorkoutController extends Controller
 
         $workout = Workout::find($id);
         $workout->update($validated);
-        
+
         return redirect('/workouts/' . $id);
     }
 
