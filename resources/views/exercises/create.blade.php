@@ -53,10 +53,10 @@
                 </div>
                 <div class="sm:pt-5">
                     <div class="flex justify-end gap-x-3">
-                        <a href="/exercises" class="block rounded-md bg-white py-2 px-3 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+                        <x-button href="/exercises" styles="none" class="relative inline-flex items-center rounded-md px-3 py-2 text-sm bg-white font-semibold text-gray-900 ring-1 ring-inset focus:ring-gray-600 hover:bg-gray-200 focus:z-10">
                             Cancel
-                        </a>
-                        <button type="submit" class="inline-flex justify-center rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                        </x-button>
+                        <button type="submit" class="inline-flex justify-center rounded-md bg-blue-500 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400">
                             Create</button>
                     </div>
                 </div>

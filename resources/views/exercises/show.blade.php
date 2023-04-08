@@ -5,9 +5,9 @@
 				Exercise Information
 			</h2>
 			<div class="isolate inline-flex rounded-md shadow-sm">
-				<a href="/exercises/{{ $exercise->id }}/edit" class="relative inline-flex items-center rounded-l-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10">
-					Edit Exercise
-				</a>
+				<x-button href="/exercises/{{ $exercise->id }}/edit" styles="blue" class="relative inline-flex items-center rounded-md px-3 py-2 text-sm font-semibold text-white hover:bg-blue-400 focus:z-10">
+                    Edit Exercise
+                </x-button>
 			</div>
 		</div>
 	</x-slot>

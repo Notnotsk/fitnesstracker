@@ -5,9 +5,9 @@
                 Workouts
             </h2>
             <div class="isolate inline-flex rounded-md shadow-sm">
-                <a href="/workouts/create" class="relative inline-flex items-center rounded-l-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10">
+                <x-button href="/workouts/create" styles="blue" class="relative inline-flex items-center rounded-md px-3 py-2 text-sm font-semibold text-white ring-1 ring-inset hover:bg-blue-400 focus:z-10">
                     Create Workout
-                </a>
+                </x-button>
             </div>
         </div>
     </x-slot>
@@ -35,9 +35,7 @@
                 </div>
             @endforeach
         </div>
-
         {{  $workouts->links() }}
-
     </div>
 </x-app-layout>
 
