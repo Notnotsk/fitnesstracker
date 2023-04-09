@@ -11,12 +11,12 @@
 			</div>
 		</div>
 	</x-slot>
-	<x-container class="max-w-7xl">
-		<div class="overflow-hidden bg-white shadow sm:rounded-md max-w-7xl mx-auto mt-0 p-5 border-t border-gray-200">
+	<x-container class="max-w-6xl mx-auto">
+		<div>
 			<dl class="divide-y divide-gray-200">
 				@if ($exercise->name)
-					<div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
-						<dt class="text-sm font-medium text-gray-500">Name</dt>
+					<div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:py-5">
+						<dt class="text-base font-semibold text-gray-800">Name</dt>
 						<dd class="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
 							<span class="flex-grow">{{ $exercise->name }}</span>
 							<span class="ml-4 flex-shrink-0">
@@ -27,7 +27,7 @@
 				@endif
 				@if (count($exercise->muscles))
 					<div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
-						<dt class="text-sm font-medium text-gray-500">Muscles</dt>
+						<dt class="text-base font-semibold text-gray-800">Muscles</dt>
 						<dd class="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
 							@foreach ($exercise->muscles as $muscle)
 								<span class="">{{ $muscle }}</span>,&nbsp;
@@ -37,7 +37,7 @@
 				@endif
 				@if ($exercise->size)
 					<div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
-						<dt class="text-sm font-medium text-gray-500">Size</dt>
+						<dt class="text-base font-semibold text-gray-800">Size</dt>
 						<dd class="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
 							<span class="flex-grow">{{ $exercise->size }}</span>
 							<span class="ml-4 flex-shrink-0">
@@ -48,7 +48,7 @@
 				@endif
 			</dl>
 		</div>
-		<form action="/exercises/{{ $exercise->id }}" method="post" class="mt-4">
+		<form action="/exercises/{{ $exercise->id }}" method="post" class="mt-4 flex justify-end gap-x-3">
 			@csrf 
 			@method('delete')
 			<input type="submit" value="Delete" class="inline-flex justify-center rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
