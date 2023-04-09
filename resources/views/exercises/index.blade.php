@@ -5,15 +5,15 @@
                 Exercises
             </h2>
             <div class="isolate inline-flex rounded-md shadow-sm">
-                <x-button href="/exercises/create" styles="blue" class="relative inline-flex items-center rounded-md px-3 py-2 text-sm font-semibold text-white ring-1 ring-inset hover:bg-blue-400 focus:z-10">
+                <x-button href="/exercises/create" styles="indigo" class="rounded-md">
                     Create Exercise
                 </x-button>
             </div>
         </div>
     </x-slot>
 
-    <div>
-        <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
+    <x-container>
+        <div class="mx-auto py-4">
             @foreach ($exercises as $exercise)
                 <div class="overflow-hidden bg-white shadow sm:rounded-md">
                     <ul role="list" class="divide-y divide-gray-200">
@@ -34,11 +34,11 @@
                     </ul>
                 </div>
             @endforeach
+            <div class="mt-4">
+                {{  $exercises->links() }}
+            </div>
         </div>
-
-        {{  $exercises->links() }}
-
-    </div>
+    </x-container>
 </x-app-layout>
 
 

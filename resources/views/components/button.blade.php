@@ -9,11 +9,11 @@
 	    case 'none':
 	        $btnClasses = '';
 	        break;
-	    case 'blue':
-	        $btnClasses = 'bg-blue-500 border border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 hover:bg-blue-600 inline-flex items-center text-gray-100';
+	    case 'indigo':
+	        $btnClasses = 'inline-flex items-center font-semibold text-white bg-indigo-600 border-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 hover:bg-indigo-500';
 	        break;
 	    default:
-	        $btnClasses = 'bg-white border border-gray-200 dark:bg-black dark:border-gray-800 dark:hover:bg-gray-900 dark:ring-offset-black dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 hover:bg-gray-50 inline-flex items-center text-gray-700';
+	        $btnClasses = 'inline-flex items-center font-semibold text-gray-700 bg-white border-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2';
 	        break;
 	}
 
@@ -22,7 +22,7 @@
 	        $btnClasses .= 'rounded px-2 py-1 text-sm';
 	        break;
 		case 'md':
-	        $btnClasses .= 'rounded-md px-2.5 py-1.5 text-sm';
+	        $btnClasses .= 'rounded-md px-3 py-2 text-sm';
 	        break;
 	    case 'lg':
 	        $btnClasses .= 'rounded-lg px-6 py-4 text-lg';
