@@ -21,7 +21,7 @@
                 <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-gray-200 sm:pt-5">
                     <x-label for="name">Name</x-label> 
                     <div class="mt-2 sm:col-span-2 sm:mt-0 mb-4">
-                    <input type="text" name="name" id="name" autocomplete="name" value="{{ old('name')}}" class="block w-full max-w-lg rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                    <x-input type="text" name="name" id="name" autocomplete="name" value="{{ old('name')}}" />
                     </div>
                 </div> 
                 <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
@@ -31,7 +31,7 @@
                             @foreach ($muscles as $muscle)
                                 <div class="relative flex items-start">
                                     <div class="flex h-6 items-center">
-                                        <input id="muscles[]" name="muscles[]" type="checkbox" value="{{ $muscle }}" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                        <x-input id="muscles[]" name="muscles[]" type="checkbox" value="{{ $muscle }}" />
                                     </div>
                                     <div class="ml-3 text-sm leading-6">
                                         <label for="muscles[]" class="font-medium text-gray-900">{{ $muscle }}</label>

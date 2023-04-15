@@ -20,13 +20,13 @@
                 @csrf
                 @method('patch')
                 <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
-                    <label for="weight" class="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5">Weight</label>
+                    <x-label for="weight">Weight</x-label>
                     <div class="mt-2 sm:col-span-2 sm:mt-0 mb-4">
                         <input type="integer" name="weight" id="weight" value="{{ $set->weight }}" class="block w-full max-w-lg rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6 indent-3">
                     </div>
                 </div> 
                 <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
-                    <label for="reps" class="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5">Reps</label>
+                    <x-label for="reps">Reps</x-label>
                     <div class="mt-2 sm:col-span-2 sm:mt-0 mb-4">
                         <input type="integer" name="reps" id="reps" value="{{ $set->reps }}" class="block w-full max-w-lg rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6 indent-3">
                     </div>
