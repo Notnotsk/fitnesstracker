@@ -7,15 +7,7 @@
     
     <x-container>
         <div class="mx-auto py-4">
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
+           <x-validation-errors/>
             <form action="/exercises" method="post">
                 @csrf
                 <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-gray-200 sm:pt-5">

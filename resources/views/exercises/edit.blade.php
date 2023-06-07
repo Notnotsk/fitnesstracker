@@ -7,15 +7,7 @@
 
     <x-container class="max-w-6xl mx-auto">
         <div class="overflow-hidden bg-white shadow sm:rounded-md p-5 border-t border-gray-200">
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
+            <x-validation-errors/>
             <form action="/exercises/{{ $exercise->id }}" method="post">
                 @csrf
                 @method('patch')
