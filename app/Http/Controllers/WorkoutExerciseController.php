@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Exercise;
 use App\Models\Workout;
+use Illuminate\Http\Request;
 
 class WorkoutExerciseController extends Controller
 {
@@ -28,6 +28,6 @@ class WorkoutExerciseController extends Controller
 
         $workout->exercises()->attach($validated['exercise_id'], ['notes' => $validated['notes']]);
 
-        return redirect('/workouts/' . $workout->id);
+        return redirect('/workouts/'.$workout->id);
     }
 }

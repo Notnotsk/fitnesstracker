@@ -46,14 +46,14 @@ class ExerciseController extends Controller
 
     public function store()
     {
-        $validated = request()->validate([ 
+        $validated = request()->validate([
             'name' => 'required',
             'muscles' => 'nullable',
             'size' => 'nullable',
         ]);
-        
+
         Exercise::create($validated);
-        
+
         return redirect('/exercises');
     }
 
@@ -87,8 +87,8 @@ class ExerciseController extends Controller
 
         $exercise = Exercise::find($id);
         $exercise->update($validated);
-        
-        return redirect('/exercises/' . $id);
+
+        return redirect('/exercises/'.$id);
     }
 
     public function destroy($id)

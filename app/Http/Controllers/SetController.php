@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Set;
-use Illuminate\Http\Request;
 
 class SetController extends Controller
 {
@@ -23,7 +22,7 @@ class SetController extends Controller
 
         Set::create($validated);
 
-        return redirect('/workouts/' . $validated['workout_id']);
+        return redirect('/workouts/'.$validated['workout_id']);
     }
 
     public function edit($id)
@@ -45,6 +44,6 @@ class SetController extends Controller
         $set = Set::find($id);
         $set->update($validated);
 
-        return redirect('/workouts/' . $set->workout_id);
+        return redirect('/workouts/'.$set->workout_id);
     }
 }
