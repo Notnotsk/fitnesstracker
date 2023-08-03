@@ -4,45 +4,6 @@
             class="max-w-2xl px-4 py-16 mx-auto sm:px-6 sm:py-24 lg:grid lg:max-w-7xl lg:grid-cols-12 lg:gap-x-8 lg:px-8">
             <div class="lg:col-span-4">
                 <h2 class="text-2xl font-bold tracking-tight text-gray-900">Workout</h2>
-                <div class="flex items-center mt-3">
-                    <div>
-                        <div class="flex items-center">
-                            <!-- Active: "text-yellow-400", Default: "text-gray-300" -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor"
-                                aria-hidden="true">
-                                <path fill-rule="evenodd"
-                                    d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                            <svg class="flex-shrink-0 w-5 h-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor"
-                                aria-hidden="true">
-                                <path fill-rule="evenodd"
-                                    d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                            <svg class="flex-shrink-0 w-5 h-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor"
-                                aria-hidden="true">
-                                <path fill-rule="evenodd"
-                                    d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                            <svg class="flex-shrink-0 w-5 h-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor"
-                                aria-hidden="true">
-                                <path fill-rule="evenodd"
-                                    d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                            <svg class="flex-shrink-0 w-5 h-5 text-gray-300" viewBox="0 0 20 20" fill="currentColor"
-                                aria-hidden="true">
-                                <path fill-rule="evenodd"
-                                    d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                        </div>
-                        <p class="sr-only">4 out of 5 stars</p>
-                    </div>
-                    <p class="ml-2 text-sm text-gray-900">Based on 1624 workouts</p>
-                </div>
                 <div class="mt-6">
                     <h3 class="sr-only">Workout information</h3>
                     <dl class="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2">
@@ -76,122 +37,6 @@
                         </div>
                     </dl>
                 </div>
-                <div class="mt-6">
-                    <h3 class="sr-only">Review data</h3>
-                    <dl class="space-y-3">
-                        <div class="flex items-center text-sm">
-                            <dt class="flex items-center flex-1">
-                                <p class="w-3 font-medium text-gray-900">5<span class="sr-only"> star workouts</span>
-                                </p>
-                                <div aria-hidden="true" class="flex items-center flex-1 ml-1">
-                                    <svg class="flex-shrink-0 w-5 h-5 text-yellow-400" viewBox="0 0 20 20"
-                                        fill="currentColor" aria-hidden="true">
-                                        <path fill-rule="evenodd"
-                                            d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
-                                            clip-rule="evenodd" />
-                                    </svg>
-
-                                    <div class="relative flex-1 ml-3">
-                                        <div class="h-3 bg-gray-100 border border-gray-200 rounded-full"></div>
-
-                                        <div style="width: calc(1019 / 1624 * 100%)"
-                                            class="absolute inset-y-0 bg-yellow-400 border border-yellow-400 rounded-full">
-                                        </div>
-                                    </div>
-                                </div>
-                            </dt>
-                            <dd class="w-10 ml-3 text-sm text-right text-gray-900 tabular-nums">63%</dd>
-                        </div>
-                        <div class="flex items-center text-sm">
-                            <dt class="flex items-center flex-1">
-                                <p class="w-3 font-medium text-gray-900">4<span class="sr-only"> star workouts</span>
-                                </p>
-                                <div aria-hidden="true" class="flex items-center flex-1 ml-1">
-                                    <svg class="flex-shrink-0 w-5 h-5 text-yellow-400" viewBox="0 0 20 20"
-                                        fill="currentColor" aria-hidden="true">
-                                        <path fill-rule="evenodd"
-                                            d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
-                                            clip-rule="evenodd" />
-                                    </svg>
-
-                                    <div class="relative flex-1 ml-3">
-                                        <div class="h-3 bg-gray-100 border border-gray-200 rounded-full"></div>
-
-                                        <div style="width: calc(162 / 1624 * 100%)"
-                                            class="absolute inset-y-0 bg-yellow-400 border border-yellow-400 rounded-full">
-                                        </div>
-                                    </div>
-                                </div>
-                            </dt>
-                            <dd class="w-10 ml-3 text-sm text-right text-gray-900 tabular-nums">10%</dd>
-                        </div>
-                        <div class="flex items-center text-sm">
-                            <dt class="flex items-center flex-1">
-                                <p class="w-3 font-medium text-gray-900">3<span class="sr-only"> star workouts</span>
-                                </p>
-                                <div aria-hidden="true" class="flex items-center flex-1 ml-1">
-                                    <svg class="flex-shrink-0 w-5 h-5 text-yellow-400" viewBox="0 0 20 20"
-                                        fill="currentColor" aria-hidden="true">
-                                        <path fill-rule="evenodd"
-                                            d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
-                                            clip-rule="evenodd" />
-                                    </svg>
-                                    <div class="relative flex-1 ml-3">
-                                        <div class="h-3 bg-gray-100 border border-gray-200 rounded-full"></div>
-
-                                        <div style="width: calc(97 / 1624 * 100%)"
-                                            class="absolute inset-y-0 bg-yellow-400 border border-yellow-400 rounded-full">
-                                        </div>
-                                    </div>
-                                </div>
-                            </dt>
-                            <dd class="w-10 ml-3 text-sm text-right text-gray-900 tabular-nums">6%</dd>
-                        </div>
-                        <div class="flex items-center text-sm">
-                            <dt class="flex items-center flex-1">
-                                <p class="w-3 font-medium text-gray-900">2<span class="sr-only"> star workouts</span>
-                                </p>
-                                <div aria-hidden="true" class="flex items-center flex-1 ml-1">
-                                    <svg class="flex-shrink-0 w-5 h-5 text-yellow-400" viewBox="0 0 20 20"
-                                        fill="currentColor" aria-hidden="true">
-                                        <path fill-rule="evenodd"
-                                            d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
-                                            clip-rule="evenodd" />
-                                    </svg>
-                                    <div class="relative flex-1 ml-3">
-                                        <div class="h-3 bg-gray-100 border border-gray-200 rounded-full"></div>
-
-                                        <div style="width: calc(199 / 1624 * 100%)"
-                                            class="absolute inset-y-0 bg-yellow-400 border border-yellow-400 rounded-full">
-                                        </div>
-                                    </div>
-                                </div>
-                            </dt>
-                            <dd class="w-10 ml-3 text-sm text-right text-gray-900 tabular-nums">12%</dd>
-                        </div>
-                        <div class="flex items-center text-sm">
-                            <dt class="flex items-center flex-1">
-                                <p class="w-3 font-medium text-gray-900">1<span class="sr-only"> star workouts</span>
-                                </p>
-                                <div aria-hidden="true" class="flex items-center flex-1 ml-1">
-                                    <svg class="flex-shrink-0 w-5 h-5 text-yellow-400" viewBox="0 0 20 20"
-                                        fill="currentColor" aria-hidden="true">
-                                        <path fill-rule="evenodd"
-                                            d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
-                                            clip-rule="evenodd" />
-                                    </svg>
-                                    <div class="relative flex-1 ml-3">
-                                        <div class="h-3 bg-gray-100 border border-gray-200 rounded-full"></div>
-                                        <div style="width: calc(147 / 1624 * 100%)"
-                                            class="absolute inset-y-0 bg-yellow-400 border border-yellow-400 rounded-full">
-                                        </div>
-                                    </div>
-                                </div>
-                            </dt>
-                            <dd class="w-10 ml-3 text-sm text-right text-gray-900 tabular-nums">9%</dd>
-                        </div>
-                    </dl>
-                </div>
                 <div class="mt-10">
                     <h3 class="text-lg font-medium text-gray-900">Make an update</h3>
                     <p class="mt-1 text-sm text-gray-600">If you’ve had a change in this workout, edit your workout.
@@ -211,56 +56,32 @@
                     </form>
                 </div>
             </div>
-            <div class="mt-16 lg:col-span-7 lg:col-start-6 lg:mt-0">
-                <h3 class="sr-only">Exercises</h3>
-                <div class="flow-root">
-                    <div class="-my-12 divide-y divide-gray-200">
-                        @foreach ($workout->exercises as $i => $exercise)
-                            <div class="py-12">
-                                <div class="flex items-center">
-                                    <span
-                                        class="inline-flex items-center justify-center w-12 h-12 bg-gray-500 rounded-full">
-                                        <span
-                                            class="text-lg font-medium leading-none text-white">{{ $i + 1 }}</span>
-                                    </span>
-                                    <div class="ml-4">
-                                        <h4 class="text-sm font-bold text-gray-900">{{ $exercise->name }}</h4>
-                                        <div class="flex items-center mt-1">
-                                            <!-- Active: "text-yellow-400", Default: "text-gray-300" -->
-                                            <svg class="flex-shrink-0 w-5 h-5 text-yellow-400" viewBox="0 0 20 20"
-                                                fill="currentColor" aria-hidden="true">
-                                                <path fill-rule="evenodd"
-                                                    d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
-                                                    clip-rule="evenodd" />
-                                            </svg>
-                                            <svg class="flex-shrink-0 w-5 h-5 text-yellow-400" viewBox="0 0 20 20"
-                                                fill="currentColor" aria-hidden="true">
-                                                <path fill-rule="evenodd"
-                                                    d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
-                                                    clip-rule="evenodd" />
-                                            </svg>
-                                            <svg class="flex-shrink-0 w-5 h-5 text-yellow-400" viewBox="0 0 20 20"
-                                                fill="currentColor" aria-hidden="true">
-                                                <path fill-rule="evenodd"
-                                                    d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
-                                                    clip-rule="evenodd" />
-                                            </svg>
-                                            <svg class="flex-shrink-0 w-5 h-5 text-yellow-400" viewBox="0 0 20 20"
-                                                fill="currentColor" aria-hidden="true">
-                                                <path fill-rule="evenodd"
-                                                    d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
-                                                    clip-rule="evenodd" />
-                                            </svg>
-                                            <svg class="flex-shrink-0 w-5 h-5 text-yellow-400" viewBox="0 0 20 20"
-                                                fill="currentColor" aria-hidden="true">
-                                                <path fill-rule="evenodd"
-                                                    d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
-                                                    clip-rule="evenodd" />
-                                            </svg>
-                                        </div>
-                                        <p class="sr-only">5 out of 5 stars</p>
-                                    </div>
-                                </div>
+			<div class="mt-16 lg:col-span-7 lg:col-start-6 lg:mt-0" x-data="{ ratings: Array({{ $workout->exercises->count() }}).fill(0) }">
+				<h3 class="sr-only">Exercises</h3>
+				<div class="flow-root">
+					<div class="-my-12 divide-y divide-gray-200">
+						@foreach ($workout->exercises as $i => $exercise)
+							<div class="py-12">
+								<div class="flex items-center">
+									<span class="inline-flex items-center justify-center w-12 h-12 bg-gray-500 rounded-full">
+										<span class="text-lg font-medium leading-none text-white">{{ $i + 1 }}</span>
+									</span>
+									<div class="ml-4">
+										<h4 class="text-sm font-bold text-gray-900">{{ $exercise->name }}</h4>
+										<div class="flex items-center mt-1">
+											@foreach (range(1, 5) as $star)
+												@if ($star <= old('ratings.'.$i, 0))
+													<x-svg.star-filled class="flex-shrink-0 w-5 h-5 cursor-pointer"
+														@click="ratings[{{ $i }}] = {{ $star }}" />
+												@else
+													<x-svg.star-unfilled class="flex-shrink-0 w-5 h-5 cursor-pointer"
+														@click="ratings[{{ $i }}] = {{ $star }}" />
+												@endif
+											@endforeach
+											<p class="sr-only">{{ old('ratings.'.$i, 0) }} out of 5 stars</p>
+										</div>
+									</div>
+								</div>
                                 <div class="mt-4 space-y-6 text-base italic text-gray-600">
                                     <p>{{ $exercise->pivot->notes }}</p>
                                 </div>
