@@ -56,32 +56,36 @@
                     </form>
                 </div>
             </div>
-			<div class="mt-16 lg:col-span-7 lg:col-start-6 lg:mt-0" x-data="{ ratings: Array({{ $workout->exercises->count() }}).fill(0) }">
-				<h3 class="sr-only">Exercises</h3>
-				<div class="flow-root">
-					<div class="-my-12 divide-y divide-gray-200">
-						@foreach ($workout->exercises as $i => $exercise)
-							<div class="py-12">
-								<div class="flex items-center">
-									<span class="inline-flex items-center justify-center w-12 h-12 bg-gray-500 rounded-full">
-										<span class="text-lg font-medium leading-none text-white">{{ $i + 1 }}</span>
-									</span>
-									<div class="ml-4">
-										<h4 class="text-sm font-bold text-gray-900">{{ $exercise->name }}</h4>
-										<div class="flex items-center mt-1">
-											@foreach (range(1, 5) as $star)
-												@if ($star <= old('ratings.'.$i, 0))
-													<x-svg.star-filled class="flex-shrink-0 w-5 h-5 cursor-pointer"
-														@click="ratings[{{ $i }}] = {{ $star }}" />
-												@else
-													<x-svg.star-unfilled class="flex-shrink-0 w-5 h-5 cursor-pointer"
-														@click="ratings[{{ $i }}] = {{ $star }}" />
-												@endif
-											@endforeach
-											<p class="sr-only">{{ old('ratings.'.$i, 0) }} out of 5 stars</p>
-										</div>
-									</div>
-								</div>
+            <div class="mt-16 lg:col-span-7 lg:col-start-6 lg:mt-0" x-data="{ ratings: Array({{ $workout->exercises->count() }}).fill(0) }">
+                <h3 class="sr-only">Exercises</h3>
+                <div class="flow-root">
+                    <div class="-my-12 divide-y divide-gray-200">
+                        @foreach ($workout->exercises as $i => $exercise)
+                            <div class="py-12">
+                                <div class="flex items-center">
+                                    <span
+                                        class="inline-flex items-center justify-center w-12 h-12 bg-gray-500 rounded-full">
+                                        <span
+                                            class="text-lg font-medium leading-none text-white">{{ $i + 1 }}</span>
+                                    </span>
+                                    <div class="ml-4">
+                                        <h4 class="text-sm font-bold text-gray-900">{{ $exercise->name }}</h4>
+                                        <div class="flex items-center mt-1">
+                                            @foreach (range(1, 5) as $star)
+                                                <x-svg.star-filled
+                                                    x-show="ratings[{{ $i }}] >= {{ $star }}"
+                                                    class="flex-shrink-0 w-5 h-5 cursor-pointer"
+                                                    @click="ratings[{{ $i }}] = {{ $star }}" />
+
+                                                <x-svg.star-unfilled
+                                                    x-show="ratings[{{ $i }}] < {{ $star }}"
+                                                    class="flex-shrink-0 w-5 h-5 cursor-pointer"
+                                                    @click="ratings[{{ $i }}] = {{ $star }}" />
+                                            @endforeach
+                                            <p class="sr-only">{{ old('ratings.' . $i, 0) }} out of 5 stars</p>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="mt-4 space-y-6 text-base italic text-gray-600">
                                     <p>{{ $exercise->pivot->notes }}</p>
                                 </div>
