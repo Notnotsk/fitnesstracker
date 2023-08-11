@@ -81,8 +81,7 @@
                             Save</button>
                     </div>
                 </div>
-        </div>
-        </form>
+            </form>
         </div>
     </x-container>
 </x-app-layout>
