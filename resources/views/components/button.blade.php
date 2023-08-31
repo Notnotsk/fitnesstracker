@@ -10,10 +10,10 @@
             $btnClasses = '';
             break;
         case 'indigo':
-            $btnClasses = 'inline-flex items-center font-semibold text-white bg-indigo-600 border-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 hover:bg-indigo-500';
+            $btnClasses = ' rounded-md inline-flex items-center font-semibold text-white bg-indigo-600 border-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 hover:bg-indigo-500';
             break;
         default:
-            $btnClasses = 'inline-flex items-center font-semibold text-gray-700 bg-white border-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2';
+            $btnClasses = 'rounded-md hover:bg-gray-50 inline-flex items-center font-semibold text-gray-700 bg-white border-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2';
             break;
     }
     
