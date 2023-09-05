@@ -70,20 +70,6 @@
                                     </span>
                                     <div class="ml-4">
                                         <h4 class="text-sm font-bold text-gray-900">{{ $exercise->name }}</h4>
-                                        <div class="flex items-center mt-1">
-                                            @foreach (range(1, 5) as $star)
-                                                <x-svg.star-filled
-                                                    x-show="ratings[{{ $i }}] >= {{ $star }}"
-                                                    class="flex-shrink-0 w-5 h-5 cursor-pointer"
-                                                    @click="ratings[{{ $i }}] = {{ $star }}" />
-
-                                                <x-svg.star-unfilled
-                                                    x-show="ratings[{{ $i }}] < {{ $star }}"
-                                                    class="flex-shrink-0 w-5 h-5 cursor-pointer"
-                                                    @click="ratings[{{ $i }}] = {{ $star }}" />
-                                            @endforeach
-                                            <p class="sr-only">{{ old('ratings.' . $i, 0) }} out of 5 stars</p>
-                                        </div>
                                     </div>
                                 </div>
                                 <div class="mt-4 space-y-6 text-base italic text-gray-600">
