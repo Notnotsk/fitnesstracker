@@ -15,14 +15,14 @@
                     <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
                         <x-label for="date">Date</x-label>
                         <div class="mt-2 sm:col-span-2 sm:mt-0">
-                            <x-input type="datetime-local" name="date" id="date" ::="$workout - > date" />
+                            <x-input type="datetime-local" name="date" id="date" :value="old('date', $workout->date)" />
                         </div>
                     </div>
                     <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
                         <x-label for="length">Length</x-label>
                         <div class="mt-2 mb-4 sm:col-span-2 sm:mt-0">
                             <x-input type="number" name="length" id="length" autocomplete="length"
-                                ::="$workout - > length" placeholder="minutes" />
+                                :value="old('length', $workout->length)" placeholder="minutes" />
                             <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
                             </div>
                         </div>
@@ -31,14 +31,14 @@
                 <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
                     <x-label for="name">Name</x-label>
                     <div class="mt-2 mb-4 sm:col-span-2 sm:mt-0">
-                        <x-input type="text" name="name" id="name" autocomplete="name" ::="$workout - > name"
+                        <x-input type="text" name="name" id="name" autocomplete="name" :value="old('name', $workout->name)"
                             placeholder="Routine/Week/Day" />
                     </div>
                 </div>
                 <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
                     <x-label for="venue">Venue</x-label>
                     <div class="mt-2 mb-4 sm:col-span-2 sm:mt-0">
-                        <x-input type="text" name="venue" id="venue" autocomplete="venue" ::="$workout - > venue"
+                        <x-input type="text" name="venue" id="venue" autocomplete="venue" :value="old('venue', $workout->venue)"
                             placeholder="Routine/Week/Day" />
                     </div>
                 </div>
@@ -46,20 +46,20 @@
                     <x-label for="body_weight">Body Weight</x-label>
                     <div class="mt-2 mb-4 sm:col-span-2 sm:mt-0">
                         <x-input type="number" name="body_weight" id="body_weight" autocomplete="body_weight"
-                            :value="$workout->body_weight" placeholder="lbs" />
+                            :value="old('body_weight', $workout->body_weight)" placeholder="lbs" />
                     </div>
                 </div>
                 <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
                     <x-label for="calories_burned">Calories Burned</x-label>
                     <div class="mt-2 mb-4 sm:col-span-2 sm:mt-0">
                         <x-input type="number" name="calories_burned" id="calories_burned"
-                            autocomplete="calories_burned" :value="$workout->calories_burned" />
+                            autocomplete="calories_burned" :value="old('calories_burned', $workout->calories_burned)" />
                     </div>
                 </div>
                 <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
                     <x-label for="music">Music</x-label>
                     <div class="mt-2 mb-4 sm:col-span-2 sm:mt-0">
-                        <x-input type="text" name="music" id="music" autocomplete="music" :value="$workout->music" />
+                        <x-input type="text" name="music" id="music" autocomplete="music" :value="old('music', $workout->music)" />
                     </div>
                 </div>
                 <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
@@ -76,8 +76,7 @@
                             class="block px-3 py-2 text-sm font-semibold text-gray-900 bg-white rounded-md shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
                             Cancel
                         </a>
-                        <button type="submit"
-                            class="inline-flex justify-center px-3 py-2 text-sm font-semibold text-white bg-indigo-600 rounded-md shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                        <x-button type="submit" styles="indigo">
                             Save</button>
                     </div>
                 </div>

@@ -15,7 +15,7 @@
                     <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-gray-200 sm:pt-5">
                         <x-label for="name">Name</x-label>
                         <div class="mt-2 sm:col-span-2 sm:mt-0">
-                            <x-input type="text" name="name" id="date" value="{{ $exercise->name }}" />
+                            <x-input type="text" name="name" id="date" :value="old('name', $exercise->name)" />
                         </div>
                     </div>
                     <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
@@ -30,8 +30,8 @@
                                                 class="w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-600">
                                         </div>
                                         <div class="ml-3 text-sm leading-6">
-                                            <label for="muscles[]"
-                                                class="font-medium text-gray-900">{{ $muscle }}</label>
+                                            <x-label for="muscles[]"
+                                                class="font-medium text-gray-900">{{ $muscle }}</x-label>
                                         </div>
                                     </div>
                                 @endforeach
@@ -44,9 +44,9 @@
                             <select id="size" name="size" autocomplete="size"
                                 class="block w-full max-w-lg rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
                                 <option></option>
-                                <option @selected($exercise->size === 'Small (isolation/small multi-jointed)')>Small (isolation/small multi-jointed)</option>
-                                <option @selected($exercise->size === 'Medium (less complex multi-jointed)')>Medium (less complex multi-jointed)</option>
-                                <option @selected($exercise->size === 'Large (complex multi-jointed)')>Large (complex multi-jointed)</option>
+                                <option @selected(old('size', $exercise->size) == 'Small (isolation/small multi-jointed)')>Small (isolation/small multi-jointed)</option>
+                                <option @selected(old('size', $exercise->size) == 'Medium (less complex multi-jointed)')>Medium (less complex multi-jointed)</option>
+                                <option @selected(old('size', $exercise->size) == 'Large (complex multi-jointed)')>Large (complex multi-jointed)</option>
                             </select>
                         </div>
                     </div>
@@ -59,9 +59,8 @@
                     class="block px-3 py-2 text-sm font-semibold text-gray-900 bg-white rounded-md shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
                     Cancel
                 </a>
-                <button type="submit"
-                    class="inline-flex justify-center px-3 py-2 text-sm font-semibold text-white bg-indigo-600 rounded-md shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                    Save</button>
+                <x-button type="submit" styles="indigo">
+                    Save</x-button>
             </div>
         </div>
     </x-container>

@@ -14,13 +14,13 @@
                 <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
                     <x-label for="weight">Weight</x-label>
                     <div class="mt-2 mb-4 sm:col-span-2 sm:mt-0">
-                        <x-input type="integer" name="weight" id="weight" value="{{ $set->weight }}" />
+                        <x-input type="integer" name="weight" id="weight" :value="old('weight', $set->weight)" />
                     </div>
                 </div>
                 <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
                     <x-label for="reps">Reps</x-label>
                     <div class="mt-2 mb-4 sm:col-span-2 sm:mt-0">
-                        <x-input type="integer" name="reps" id="reps" value="{{ $set->reps }}" />
+                        <x-input type="integer" name="reps" id="reps" :value="old('reps', $set->reps)" />
                     </div>
                 </div>
                 <div class="sm:pt-5">
@@ -29,9 +29,8 @@
                             class="block px-3 py-2 text-sm font-semibold text-gray-900 bg-white rounded-md shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
                             Cancel
                         </a>
-                        <button type="submit"
-                            class="inline-flex justify-center px-3 py-2 text-sm font-semibold text-white bg-indigo-600 rounded-md shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                            Save</button>
+                        <x-button type="submit" styles="indigo">
+                            Save</x-button>
                     </div>
                 </div>
             </form>
