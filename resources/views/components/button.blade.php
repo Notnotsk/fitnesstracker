@@ -10,25 +10,25 @@
             $btnClasses = '';
             break;
         case 'indigo':
-            $btnClasses = ' rounded-md inline-flex items-center font-semibold text-white bg-indigo-600 border-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 hover:bg-indigo-500';
+            $btnClasses = ' rounded-md bg-indigo-600 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600';
             break;
         default:
-            $btnClasses = 'rounded-md hover:bg-gray-50 inline-flex items-center font-semibold text-gray-700 bg-white border-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2';
+            $btnClasses = ' rounded-md bg-white text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50';
             break;
     }
     
     switch ($size) {
         case 'sm':
-            $btnClasses .= 'rounded px-2 py-1 text-sm';
+            $btnClasses .= ' rounded px-2 py-1 text-sm';
             break;
         case 'md':
-            $btnClasses .= 'rounded-md px-3 py-2 text-sm';
+            $btnClasses .= ' px-3 py-2 text-sm';
             break;
         case 'lg':
-            $btnClasses .= 'rounded-lg px-6 py-4 text-lg';
+            $btnClasses .= ' rounded-lg px-6 py-4 text-lg';
             break;
         default:
-            $btnClasses .= 'rounded-md px-4 py-2';
+            $btnClasses .= ' px-3 py-2';
             break;
     }
 @endphp

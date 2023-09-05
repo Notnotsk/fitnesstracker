@@ -4,11 +4,9 @@
             <h2 class="text-xl font-semibold leading-tight text-gray-800">
                 Exercises
             </h2>
-            <div class="inline-flex rounded-md shadow-sm isolate">
-                <x-button href="/exercises/create" styles="indigo" class="rounded-md">
-                    Create Exercise
-                </x-button>
-            </div>
+            <x-button href="/exercises/create" styles="indigo">
+                Create Exercise
+            </x-button>
         </div>
     </x-slot>
 

@@ -72,12 +72,11 @@
                 </div>
                 <div class="sm:pt-5">
                     <div class="flex justify-end gap-x-3">
-                        <a href="/workouts/{{ $workout->id }}"
-                            class="block px-3 py-2 text-sm font-semibold text-gray-900 bg-white rounded-md shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+                        <x-button href="/workouts/{{ $workout->id }}">
                             Cancel
-                        </a>
+                        </x-button>
                         <x-button type="submit" styles="indigo">
-                            Save</button>
+                            Save</x-button>
                     </div>
                 </div>
             </form>

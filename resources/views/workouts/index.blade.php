@@ -5,7 +5,7 @@
                 Workouts
             </h2>
             <div class="inline-flex rounded-md shadow-sm isolate">
-                <x-button href="/workouts/create" styles="indigo" class="rounded-md hover:bg-indigo-500">
+                <x-button href="/workouts/create" styles="indigo">
                     Create Workout
                 </x-button>
             </div>
