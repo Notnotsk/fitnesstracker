@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="text-xl font-semibold leading-tight text-gray-800">
+        <h2 class="py-2 text-xl font-semibold leading-tight text-gray-800">
             Add Set
         </h2>
     </x-slot>

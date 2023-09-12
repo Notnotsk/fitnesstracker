@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
 
-    <x-container class="max-w-6xl mx-auto">
+    <x-container class="max-w-7xl mx-auto">
         <div class="p-5 overflow-hidden bg-white border-t border-gray-200 shadow sm:rounded-md">
             <x-validation-errors />
             <form action="/exercises/{{ $exercise->id }}" method="post">

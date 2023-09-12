@@ -15,7 +15,7 @@
     <x-container>
         <div class="py-4 mx-auto">
             @foreach ($workouts as $workout)
-                <div class="my-2 overflow-hidden bg-white shadow sm:rounded-md">
+                <div class="overflow-hidden bg-white shadow sm:rounded-md">
                     <ul role="list" class="divide-y divide-gray-200">
                         <li>
                             <a href="/workouts/{{ $workout->id }}" class="block hover:bg-gray-50">

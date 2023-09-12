@@ -16,8 +16,8 @@
             </div>
         </div>
     </x-slot>
-    <x-container class="max-w-6xl mx-auto">
-        <div>
+    <x-container>
+        <div class="py-4 mx-auto ">
             <dl class="divide-y divide-gray-200">
                 @if ($exercise->name)
                     <div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:py-5">
