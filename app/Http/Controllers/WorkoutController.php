@@ -24,6 +24,7 @@ class WorkoutController extends Controller
     {
         $validated = request()->validate([
             'date' => 'required',
+            'type' => 'required',
             'name' => 'nullable',
             'music' => 'nullable',
             'venue' => 'nullable',
@@ -62,6 +63,7 @@ class WorkoutController extends Controller
     {
         $validated = request()->validate([
             'date' => 'required',
+            'type' => 'required',
             'name' => 'nullable',
             'music' => 'nullable',
             'venue' => 'nullable',
@@ -74,7 +76,7 @@ class WorkoutController extends Controller
         $workout = Workout::find($id);
         $workout->update($validated);
 
-        return redirect('/workouts/'.$id);
+        return redirect('/workouts/' . $id);
     }
 
     public function destroy($id)

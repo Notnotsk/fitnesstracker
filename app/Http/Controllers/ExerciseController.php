@@ -49,6 +49,7 @@ class ExerciseController extends Controller
             'name' => 'required',
             'muscles' => 'nullable',
             'size' => 'nullable',
+            'type' => 'required',
         ]);
 
         Exercise::create($validated);
@@ -82,12 +83,13 @@ class ExerciseController extends Controller
             'name' => 'required',
             'muscles' => 'nullable',
             'size' => 'nullable',
+            'type' => 'required',
         ]);
 
         $exercise = Exercise::find($id);
         $exercise->update($validated);
 
-        return redirect('/exercises/'.$id);
+        return redirect('/exercises/' . $id);
     }
 
     public function destroy($id)

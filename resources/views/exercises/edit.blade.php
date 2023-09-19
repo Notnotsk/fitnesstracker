@@ -5,8 +5,8 @@
         </h2>
     </x-slot>
 
-    <x-container class="max-w-7xl mx-auto">
-        <div class="p-5 overflow-hidden bg-white border-t border-gray-200 shadow sm:rounded-md">
+    <x-container>
+        <div class="py-4 mx-auto">
             <x-validation-errors />
             <form action="/exercises/{{ $exercise->id }}" method="post">
                 @csrf
@@ -15,7 +15,13 @@
                     <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-gray-200 sm:pt-5">
                         <x-label for="name">Name</x-label>
                         <div class="mt-2 sm:col-span-2 sm:mt-0">
-                            <x-input type="text" name="name" id="date" :value="old('name', $exercise->name)" />
+                            <x-input type="text" name="name" id="name" :value="old('name', $exercise->name)" />
+                        </div>
+                    </div>
+                    <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-gray-200 sm:pt-5">
+                        <x-label for="name">Type</x-label>
+                        <div class="mt-2 sm:col-span-2 sm:mt-0">
+                            <x-input type="text" name="type" id="type" :value="old('type', $exercise->name)" />
                         </div>
                     </div>
                     <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">

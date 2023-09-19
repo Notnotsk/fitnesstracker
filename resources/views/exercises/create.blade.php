@@ -16,6 +16,12 @@
                         <x-input type="text" name="name" id="name" autocomplete="name" :value="old('name')" />
                     </div>
                 </div>
+                <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-gray-200 sm:pt-5">
+                    <x-label for="name">Type</x-label>
+                    <div class="mt-2 mb-4 sm:col-span-2 sm:mt-0">
+                        <x-input type="text" name="type" id="type" autocomplete="type" :value="old('type')" />
+                    </div>
+                </div>
                 <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
                     <x-label for="muscle">Muscles</x-label>
                     <div class="mt-2 mb-4 sm:col-span-2 sm:mt-0">

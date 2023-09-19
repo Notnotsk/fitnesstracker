@@ -13,6 +13,12 @@
                 @method('patch')
                 <div class="space-y-6 sm:space-y-5">
                     <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
+                        <x-label for="name">Type</x-label>
+                        <div class="mt-2 mb-4 sm:col-span-2 sm:mt-0">
+                            <x-input type="text" name="type" id="type" autocomplete="type" :value="old('type', $workout->type)" />
+                        </div>
+                    </div>
+                    <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-gray-200 sm:pt-5">
                         <x-label for="date">Date</x-label>
                         <div class="mt-2 sm:col-span-2 sm:mt-0">
                             <x-input type="datetime-local" name="date" id="date" :value="old('date', $workout->date)" />

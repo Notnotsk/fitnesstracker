@@ -47,4 +47,9 @@ class Exercise extends Model
     {
         return $this->hasMany(Set::class);
     }
+
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
+    }
 }

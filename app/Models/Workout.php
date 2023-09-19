@@ -15,6 +15,7 @@ class Workout extends Model
 
     protected $fillable = [
         'date',
+        'type',
         'venue',
         'name',
         'music',
@@ -29,5 +30,10 @@ class Workout extends Model
         return $this->belongsToMany(Exercise::class)
             ->withPivot('notes')
             ->withTimestamps();
+    }
+
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
     }
 }

@@ -10,7 +10,7 @@
             <div
                 class="max-w-2xl px-4 py-16 mx-auto sm:px-6 sm:py-24 lg:grid lg:max-w-7xl lg:grid-cols-12 lg:gap-x-8 lg:px-8">
                 <div class="lg:col-span-4">
-                    <div class="mt-6">
+                    <div>
                         <h3 class="sr-only">Workout information</h3>
                         <dl class="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2">
                             <div class="sm:col-span-1">
