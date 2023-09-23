@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Type;
 use App\Models\Workout;
 
 class WorkoutController extends Controller
@@ -17,7 +18,11 @@ class WorkoutController extends Controller
 
     public function create()
     {
-        return view('workouts.create');
+        $types = Type::all();
+
+        return view('workouts.create', [
+            'types' => $types,
+        ]);
     }
 
     public function store()
