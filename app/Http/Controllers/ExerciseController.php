@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Type;
 use App\Models\Exercise;
 
 class ExerciseController extends Controller
@@ -38,8 +39,11 @@ class ExerciseController extends Controller
             'Upper Back',
         ];
 
+        $types = Type::all();
+
         return view('exercises.create', [
             'muscles' => $muscles,
+            'types' => $types,
         ]);
     }
 
@@ -49,7 +53,7 @@ class ExerciseController extends Controller
             'name' => 'required',
             'muscles' => 'nullable',
             'size' => 'nullable',
-            'type' => 'required',
+            'type_id' => 'required|exists:types,id',
         ]);
 
         Exercise::create($validated);
@@ -70,10 +74,12 @@ class ExerciseController extends Controller
     {
         $exercise = Exercise::find($id);
         $muscles = $exercise->getMuscles();
+        $types = Type::all();
 
         return view('exercises.edit', [
             'exercise' => $exercise,
             'muscles' => $muscles,
+            'types' => $types,
         ]);
     }
 

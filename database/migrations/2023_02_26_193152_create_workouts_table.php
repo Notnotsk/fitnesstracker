@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::create('workouts', function (Blueprint $table) {
             $table->id();
+            $table->unsignedInteger('type_id');
             $table->date('date');
             $table->string('name')->nullable();
-            $table->string('type')->nullable();
             $table->string('music')->nullable();
             $table->string('venue')->nullable();
             $table->integer('body_weight')->nullable();
             $table->integer('calories_burned')->nullable();
-            $table->time('length')->nullable();
+            $table->integer('length')->nullable();
             $table->text('notes')->nullable();
             $table->timestamps();
         });

@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('exercises', function (Blueprint $table) {
             $table->id();
+            $table->unsignedInteger('type_id');
             $table->string('name');
-            $table->string('type')->nullable();
             $table->json('muscles')->nullable();
             $table->string('size')->nullable();
             $table->timestamps();

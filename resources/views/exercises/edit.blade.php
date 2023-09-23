@@ -13,15 +13,21 @@
                 @method('patch')
                 <div class="space-y-6 sm:space-y-5">
                     <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-gray-200 sm:pt-5">
+                        <x-label for="type">Type</x-label>
+                        <div class="mt-2 sm:col-span-2 sm:mt-0">
+                            <x-select name="type_id" id="type" :value="old('type', $exercise->type_id)">
+                                @foreach ($types as $type)
+                                    <option value="{{ $type->id }}" @selected(old('type', $exercise->type_id) == $type->id)>
+                                        {{ $type->name }}
+                                    </option>
+                                @endforeach
+                            </x-select>
+                        </div>
+                    </div>
+                    <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
                         <x-label for="name">Name</x-label>
                         <div class="mt-2 sm:col-span-2 sm:mt-0">
                             <x-input type="text" name="name" id="name" :value="old('name', $exercise->name)" />
-                        </div>
-                    </div>
-                    <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-gray-200 sm:pt-5">
-                        <x-label for="name">Type</x-label>
-                        <div class="mt-2 sm:col-span-2 sm:mt-0">
-                            <x-input type="text" name="type" id="type" :value="old('type', $exercise->name)" />
                         </div>
                     </div>
                     <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
@@ -49,7 +55,6 @@
                         <div class="mt-2 mb-4 sm:col-span-2 sm:mt-0">
                             <select id="size" name="size" autocomplete="size"
                                 class="block w-full max-w-lg rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
-                                <option></option>
                                 <option @selected(old('size', $exercise->size) == 'Small (isolation/small multi-jointed)')>Small (isolation/small multi-jointed)</option>
                                 <option @selected(old('size', $exercise->size) == 'Medium (less complex multi-jointed)')>Medium (less complex multi-jointed)</option>
                                 <option @selected(old('size', $exercise->size) == 'Large (complex multi-jointed)')>Large (complex multi-jointed)</option>

@@ -11,15 +11,17 @@
             <form action="/workouts" method="post">
                 @csrf
                 <div class="space-y-6 sm:space-y-5">
-                    <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
+                    <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-gray-200 sm:pb-5">
                         <x-label for="type">Type</x-label>
-                        <x-select name="type" id="type" :value="old('type')">
-                            @foreach ($types as $type)
-                                <option value="{{ $type->id }}">{{ $type->name }}</option>
-                            @endforeach
-                        </x-select>
+                        <div class="mt-2 sm:col-span-2 sm:mt-0">
+                            <x-select name="type_id" id="type" :value="old('type')">
+                                @foreach ($types as $type)
+                                    <option value="{{ $type->id }}">{{ $type->name }}</option>
+                                @endforeach
+                            </x-select>
+                        </div>
                     </div>
-                    <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-gray-200 sm:pt-5">
+                    <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-gray-200 sm:border-t sm:pt-5">
                         <x-label for="date">Date</x-label>
                         <div class="mt-2 sm:col-span-2 sm:mt-0">
                             <x-input type="datetime-local" name="date" id="date" :value="old('date') ?? now()->format('Y-m-d\TH:i')" />

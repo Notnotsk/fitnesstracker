@@ -17,6 +17,7 @@ class Exercise extends Model
         'name',
         'muscles',
         'size',
+        'type_id',
     ];
 
     public function getMuscles()
