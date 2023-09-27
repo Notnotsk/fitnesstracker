@@ -20,7 +20,7 @@ class Exercise extends Model
         'type_id',
     ];
 
-    public function getMuscles()
+    public static function getMuscles()
     {
         return [
             'Abductors',

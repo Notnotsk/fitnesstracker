@@ -9,7 +9,7 @@ class WorkoutController extends Controller
 {
     public function index()
     {
-        $workouts = Workout::paginate(8);
+        $workouts = Workout::with('type')->paginate(8);
 
         return view('workouts.index', [
             'workouts' => $workouts,

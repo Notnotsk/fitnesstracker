@@ -13,33 +13,35 @@
     </x-slot>
 
     <x-container>
-        <div class="py-4 mx-auto">
+        <ul role="list"
+            class="overflow-hidden bg-white divide-y divide-gray-100 shadow-sm ring-1 ring-gray-900/5 sm:rounded-xl">
             @foreach ($workouts as $workout)
-                <div class="overflow-hidden bg-white shadow sm:rounded-md">
-                    <ul role="list" class="divide-y divide-gray-200">
-                        <li>
-                            <a href="/workouts/{{ $workout->id }}" class="block hover:bg-gray-50">
-                                <div class="flex items-center px-4 py-4 sm:px-6">
-                                    <div class="flex-1 min-w-0 sm:flex sm:items-center sm:justify-between">
-                                        <p>{{ $workout->name . ' - ' . $workout->date->toDayDateTimeString() }}</p>
-                                    </div>
-                                    <div class="flex-shrink-0 ml-5">
-                                        <svg class="w-5 h-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor"
-                                            aria-hidden="true">
-                                            <path fill-rule="evenodd"
-                                                d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
-                                                clip-rule="evenodd" />
-                                        </svg>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                <li class="relative flex justify-between px-4 py-5 gap-x-6 hover:bg-gray-50 sm:px-6">
+                    <div class="flex min-w-0 gap-x-4">
+                        <x-svg.user-circle class="flex-none w-12 h-12 bg-gray-400 rounded-full text-gray-50" />
+                        <div class="flex-auto min-w-0">
+                            <p class="text-sm font-semibold leading-6 text-gray-900">
+                                <a href="/workouts/{{ $workout->id }}">
+                                    <span class="absolute inset-x-0 bottom-0 -top-px"></span>
+                                    {{ $workout->name ?? 'N/A' }}
+                                </a>
+                            </p>
+                            <p class="flex mt-1 text-xs leading-5 text-gray-500">
+                                <a href="mailto:leslie.alexander@example.com"
+                                    class="relative truncate hover:underline">{{ $workout->type->name ?? 'N/A' }}</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex items-center shrink-0 gap-x-4">
+                        <div class="hidden sm:flex sm:flex-col sm:items-end">
+                            <p class="text-sm leading-6 text-gray-900">{{ $workout->venue ?? 'N/A' }}</p>
+                            <p class="mt-1 text-xs leading-5 text-gray-500">{{ $workout->date->diffForHumans() }}
+                            </p>
+                        </div>
+                        <x-svg.chevron-right class="flex-none w-5 h-5 text-gray-400" />
+                    </div>
+                </li>
             @endforeach
-            <div class="mt-4">
-                {{ $workouts->links() }}
-            </div>
-        </div>
+        </ul>
     </x-container>
 </x-app-layout>

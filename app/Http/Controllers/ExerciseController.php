@@ -18,26 +18,7 @@ class ExerciseController extends Controller
 
     public function create()
     {
-        $muscles = [
-            'Abductors',
-            'Abs',
-            'Adductors',
-            'Biceps',
-            'Calves',
-            'Chest',
-            'Forearms',
-            'Front Delts',
-            'Glutes',
-            'Hams',
-            'Lats',
-            'Lower Back',
-            'Quads',
-            'Rear Delts',
-            'Side Delts',
-            'Traps',
-            'Triceps',
-            'Upper Back',
-        ];
+        $muscles = Exercise::getMuscles();
 
         $types = Type::all();
 
