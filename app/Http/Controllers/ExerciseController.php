@@ -9,7 +9,7 @@ class ExerciseController extends Controller
 {
     public function index()
     {
-        $exercises = Exercise::orderBy('name')->paginate(8);
+        $exercises = Exercise::withCount('sets')->orderBy('name')->paginate(8);
 
         return view('exercises.index', [
             'exercises' => $exercises,

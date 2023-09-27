@@ -44,4 +44,7 @@
             @endforeach
         </ul>
     </x-container>
+    <div class="mt-4">
+        {{ $workouts->links() }}
+    </div>
 </x-app-layout>
