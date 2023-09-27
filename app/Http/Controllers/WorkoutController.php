@@ -9,10 +9,19 @@ class WorkoutController extends Controller
 {
     public function index()
     {
-        $workouts = Workout::with('type')->paginate(8);
+        $typeId = request('type_id');
+
+        $workouts = Workout::with('type')
+            ->when($typeId, function ($query, $typeId) {
+                return $query->where('type_id', $typeId);
+            })
+            ->paginate(8);
+
+        $types = Type::all();
 
         return view('workouts.index', [
             'workouts' => $workouts,
+            'types' => $types,
         ]);
     }
 
