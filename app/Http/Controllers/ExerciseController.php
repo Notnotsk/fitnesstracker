@@ -9,10 +9,20 @@ class ExerciseController extends Controller
 {
     public function index()
     {
-        $exercises = Exercise::withCount('sets')->orderBy('name')->paginate(8);
+        $typeId = request('type_id');
+
+        $exercises = Exercise::withCount('sets')
+            ->when($typeId, function ($query, $typeId) {
+                return $query->where('type_id', $typeId);
+            })
+            ->orderBy('name')
+            ->paginate(8);
+
+        $types = Type::all();
 
         return view('exercises.index', [
             'exercises' => $exercises,
+            'types' => $types,
         ]);
     }
 
@@ -32,7 +42,7 @@ class ExerciseController extends Controller
     {
         $validated = request()->validate([
             'name' => 'required',
-            'muscles' => 'nullable',
+            'muscles' => 'nullable|array',
             'size' => 'nullable',
             'type_id' => 'required|exists:types,id',
         ]);

@@ -11,6 +11,15 @@
     </x-slot>
 
     <x-container>
+        <x-select x-data="{ typeId: '{{ request('type_id') }}' }"
+            @change="window.location.href = $event.target.value ? '/exercises?type_id=' + $event.target.value : '/exercises'"
+            class="mb-4">
+            <option value="">All Types</option>
+            @foreach ($types as $type)
+                <option :selected="typeId == '{{ $type->id }}'" value="{{ $type->id }}">{{ $type->name }}
+                </option>
+            @endforeach
+        </x-select>
         <ul role="list"
             class="overflow-hidden bg-white divide-y divide-gray-100 shadow-sm ring-1 ring-gray-900/5 sm:rounded-xl">
             @foreach ($exercises as $exercise)
@@ -26,7 +35,8 @@
                             </p>
                             <p class="flex mt-1 text-xs leading-5 text-gray-500">
                                 <a href="mailto:leslie.alexander@example.com"
-                                    class="relative truncate hover:underline">{{ implode(', ', $exercise->muscles) ?? 'N/A' }}
+                                    class="relative truncate hover:underline">{{ $exercise->type->name ?? 'N/A' }}
+                                    {{ !empty($exercise->muscles) ? ' - ' . implode(', ', $exercise->muscles) : '' }}
                                 </a>
                             </p>
                         </div>

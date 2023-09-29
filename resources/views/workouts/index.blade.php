@@ -13,12 +13,16 @@
     </x-slot>
 
     <x-container>
-        <x-select x-model="typeId" @change="window.location.href = '/workouts?type_id=' + typeId" class="mb-4">
+        <x-select x-data="{ typeId: '{{ request('type_id') }}' }"
+            @change="window.location.href = $event.target.value ? '/workouts?type_id=' + $event.target.value : '/workouts'"
+            class="mb-4">
             <option value="">All Types</option>
             @foreach ($types as $type)
-                <option value="{{ $type->id }}">{{ $type->name }}</option>
+                <option :selected="typeId == '{{ $type->id }}'" value="{{ $type->id }}">{{ $type->name }}
+                </option>
             @endforeach
         </x-select>
+
         <ul role="list"
             class="overflow-hidden bg-white divide-y divide-gray-100 shadow-sm ring-1 ring-gray-900/5 sm:rounded-xl">
             @foreach ($workouts as $workout)
