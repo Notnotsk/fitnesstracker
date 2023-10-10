@@ -32,6 +32,16 @@ class Workout extends Model
             ->withTimestamps();
     }
 
+    public function plans()
+    {
+        return $this->belongsTo(Plan::class);
+    }
+
+    public function sets()
+    {
+        return $this->hasMany(Set::class);
+    }
+
     public function type()
     {
         return $this->belongsTo(Type::class);

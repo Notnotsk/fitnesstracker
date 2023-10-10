@@ -44,6 +44,11 @@ class Exercise extends Model
         ];
     }
 
+    public function plans()
+    {
+        return $this->belongsToMany(Plan::class);
+    }
+
     public function sets()
     {
         return $this->hasMany(Set::class);
@@ -52,5 +57,12 @@ class Exercise extends Model
     public function type()
     {
         return $this->belongsTo(Type::class);
+    }
+
+    public function workouts()
+    {
+        return $this->belongsToMany(Workout::class)
+            ->withPivot('notes')
+            ->withTimestamps();
     }
 }

@@ -20,7 +20,7 @@
         <div class="py-4 mx-auto ">
             <dl class="divide-y divide-gray-200">
                 @if ($exercise->name)
-                    <div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:py-5">
+                    <div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
                         <dt class="text-base font-semibold text-gray-800">Name</dt>
                         <dd class="flex mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
                             <span class="flex-grow">{{ $exercise->name }}</span>
