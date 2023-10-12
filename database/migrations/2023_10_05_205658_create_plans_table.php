@@ -13,6 +13,8 @@ return new class extends Migration
             $table->unsignedInteger('type_id');
             $table->unsignedInteger('created_by');
             $table->string('title');
+            $table->string('level');
+            $table->string('category');
             $table->string('description')->nullable();
             $table->string('duration')->nullable();
             $table->boolean('is_custom');

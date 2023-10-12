@@ -8,6 +8,9 @@
                     {{-- <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         Dashboard
                     </x-nav-link> --}}
+                    <x-nav-link :href="route('plans.index')" :active="request()->routeIs('plans.index')">
+                        Plans
+                    </x-nav-link>
                     <x-nav-link :href="route('workouts.index')" :active="request()->routeIs('workouts.index')">
                         Workouts
                     </x-nav-link>

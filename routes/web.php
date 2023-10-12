@@ -1,11 +1,12 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ExerciseController;
+use App\Http\Controllers\PlanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SetController;
 use App\Http\Controllers\WorkoutController;
 use App\Http\Controllers\WorkoutExerciseController;
-use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
@@ -16,8 +17,9 @@ Route::middleware('auth')->group(function () {
         return view('dashboard');
     })->name('dashboard');
 
-    Route::resource('workouts', WorkoutController::class);
     Route::resource('exercises', ExerciseController::class);
+    Route::resource('plans', PlanController::class);
+    Route::resource('workouts', WorkoutController::class);
     Route::resource('sets', SetController::class)->except(['index', 'show', 'destroy']);
     Route::name('workouts.')->group(function () {
         Route::resource('workouts/{workout}/exercises', WorkoutExerciseController::class);
@@ -28,4 +30,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
