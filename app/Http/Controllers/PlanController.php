@@ -3,63 +3,103 @@
 namespace App\Http\Controllers;
 
 use App\Models\Plan;
-use Illuminate\Http\Request;
+use App\Models\Type;
 
 class PlanController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $typeId = request('type_id');
+
+        $plans = Plan::with('type')
+            ->when($typeId, function ($query, $typeId) {
+                return $query->where('type_id', $typeId);
+            })
+            ->paginate(8);
+
+        $types = Type::all();
+
+        return view('plans.index', [
+            'plans' => $plans,
+            'types' => $types,
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        $types = Type::all();
+
+        return view('plans.create', [
+            'types' => $types,
+        ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function store()
     {
-        //
+        $validated = request()->validate([
+            'date' => 'required',
+            'name' => 'nullable',
+            'music' => 'nullable',
+            'venue' => 'nullable',
+            'body_weight' => 'nullable',
+            'calories_burned' => 'nullable',
+            'length' => 'nullable',
+            'notes' => 'nullable',
+            'type_id' => 'required|exists:types,id',
+        ]);
+
+        Plan::create($validated);
+
+        return redirect('/plans');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Plan $plan)
+    public function show($id)
     {
-        //
+        $plan = Plan::with(['exercises.sets' => function ($query) use ($id) {
+            $query->where('plan_id', $id);
+        }])->find($id);
+
+        return view('plans.show', [
+            'plan' => $plan,
+        ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Plan $plan)
+    public function edit($id)
     {
-        //
+        $plan = Plan::find($id);
+        $types = Type::all();
+
+        return view('plans.edit', [
+            'plan' => $plan,
+            'types' => $types,
+        ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Plan $plan)
+    public function update($id)
     {
-        //
+        $validated = request()->validate([
+            'date' => 'required',
+            'type' => 'required',
+            'name' => 'nullable',
+            'music' => 'nullable',
+            'venue' => 'nullable',
+            'body_weight' => 'nullable',
+            'calories_burned' => 'nullable',
+            'length' => 'nullable',
+            'notes' => 'nullable',
+        ]);
+
+        $plan = Plan::find($id);
+        $plan->update($validated);
+
+        return redirect('/plans/' . $id);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Plan $plan)
+    public function destroy($id)
     {
-        //
+        $plan = Plan::find($id);
+        $plan->delete();
+
+        return redirect('/plans');
     }
 }
