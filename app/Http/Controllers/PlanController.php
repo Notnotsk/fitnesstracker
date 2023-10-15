@@ -27,7 +27,7 @@ class PlanController extends Controller
 
     public function create()
     {
-        $types = Type::all();
+        $types = Type::where('category', 'plans')->get();
 
         return view('plans.create', [
             'types' => $types,

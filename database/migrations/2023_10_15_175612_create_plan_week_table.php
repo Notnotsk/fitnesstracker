@@ -6,19 +6,22 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    /**
+     * Run the migrations.
+     */
     public function up(): void
     {
-        Schema::create('plan_workout', function (Blueprint $table) {
-            $table->id();
+        Schema::create('plan_week', function (Blueprint $table) {
             $table->unsignedInteger('plan_id');
-            $table->unsignedInteger('workout_id');
-            $table->text('notes')->nullable();
-            $table->timestamps();
+            $table->integer('week_number')->nullable();
         });
     }
 
+    /**
+     * Reverse the migrations.
+     */
     public function down(): void
     {
-        Schema::dropIfExists('plan_workout');
+        Schema::dropIfExists('plan_week');
     }
 };

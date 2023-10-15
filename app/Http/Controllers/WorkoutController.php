@@ -27,7 +27,7 @@ class WorkoutController extends Controller
 
     public function create()
     {
-        $types = Type::all();
+        $types = Type::where('category', 'workouts')->get();
 
         return view('workouts.create', [
             'types' => $types,

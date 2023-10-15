@@ -30,7 +30,7 @@ class ExerciseController extends Controller
     {
         $muscles = Exercise::getMuscles();
 
-        $types = Type::all();
+        $types = Type::where('category', 'exercises')->get();
 
         return view('exercises.create', [
             'muscles' => $muscles,
