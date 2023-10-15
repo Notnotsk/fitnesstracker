@@ -15,7 +15,7 @@
             $btnClasses = 'inline-flex rounded-full bg-gray-100 text-gray-800';
             break;
     }
-    
+
     switch ($size) {
         case 'lg':
             $btnClasses .= ' px-3 py-0.5 text-sm font-medium';

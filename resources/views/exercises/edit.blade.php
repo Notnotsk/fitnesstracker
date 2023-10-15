@@ -6,7 +6,7 @@
     </x-slot>
 
     <x-container>
-        <div class="py-4 mx-auto">
+        <div class="mx-auto py-4">
             <x-validation-errors />
             <form action="/exercises/{{ $exercise->id }}" method="post">
                 @csrf
@@ -32,18 +32,15 @@
                     </div>
                     <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
                         <x-label for="muscle">Muscles</x-label>
-                        <div class="mt-2 mb-4 sm:col-span-2 sm:mt-0">
+                        <div class="mb-4 mt-2 sm:col-span-2 sm:mt-0">
                             <div class="space-y-5">
                                 @foreach ($muscles as $muscle)
                                     <div class="relative flex items-start">
-                                        <div class="flex items-center h-6">
-                                            <input @checked(in_array($muscle, $exercise->muscles)) id="muscles[]" name="muscles[]"
-                                                type="checkbox" value="{{ $muscle }}"
-                                                class="w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-600">
+                                        <div class="flex h-6 items-center">
+                                            <input @checked(in_array($muscle, $exercise->muscles)) id="muscles[]" name="muscles[]" type="checkbox" value="{{ $muscle }}" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                         </div>
                                         <div class="ml-3 text-sm leading-6">
-                                            <x-label for="muscles[]"
-                                                class="font-medium text-gray-900">{{ $muscle }}</x-label>
+                                            <x-label for="muscles[]" class="font-medium text-gray-900">{{ $muscle }}</x-label>
                                         </div>
                                     </div>
                                 @endforeach
@@ -52,9 +49,8 @@
                     </div>
                     <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
                         <x-label for="size">Exercise Size</x-label>
-                        <div class="mt-2 mb-4 sm:col-span-2 sm:mt-0">
-                            <select id="size" name="size" autocomplete="size"
-                                class="block w-full max-w-lg rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                        <div class="mb-4 mt-2 sm:col-span-2 sm:mt-0">
+                            <select id="size" name="size" autocomplete="size" class="block w-full max-w-lg rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
                                 <option @selected(old('size', $exercise->size) == 'Small (isolation/small multi-jointed)')>Small (isolation/small multi-jointed)</option>
                                 <option @selected(old('size', $exercise->size) == 'Medium (less complex multi-jointed)')>Medium (less complex multi-jointed)</option>
                                 <option @selected(old('size', $exercise->size) == 'Large (complex multi-jointed)')>Large (complex multi-jointed)</option>
@@ -66,8 +62,7 @@
         </div>
         <div class="sm:pt-5">
             <div class="flex justify-end gap-x-3">
-                <a href="/exercises"
-                    class="block px-3 py-2 text-sm font-semibold text-gray-900 bg-white rounded-md shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+                <a href="/exercises" class="block rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
                     Cancel
                 </a>
                 <x-button type="submit" styles="indigo">

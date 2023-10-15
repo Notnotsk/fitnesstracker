@@ -16,7 +16,7 @@
             $btnClasses = 'rounded-md font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 bg-white text-sm';
             break;
     }
-    
+
     switch ($size) {
         case 'sm':
             $btnClasses .= ' rounded px-2 py-1 text-sm';
