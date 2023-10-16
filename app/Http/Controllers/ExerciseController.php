@@ -18,7 +18,7 @@ class ExerciseController extends Controller
             ->orderBy('name')
             ->paginate(8);
 
-        $types = Type::all();
+        $types = Type::where('category', 'exercises')->get();
 
         return view('exercises.index', [
             'exercises' => $exercises,
@@ -65,7 +65,7 @@ class ExerciseController extends Controller
     {
         $exercise = Exercise::find($id);
         $muscles = $exercise->getMuscles();
-        $types = Type::all();
+        $types = Type::where('category', 'exercises')->get();
 
         return view('exercises.edit', [
             'exercise' => $exercise,

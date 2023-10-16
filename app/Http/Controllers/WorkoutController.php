@@ -17,7 +17,7 @@ class WorkoutController extends Controller
             })
             ->paginate(8);
 
-        $types = Type::all();
+        $types = Type::where('category', 'workouts')->get();
 
         return view('workouts.index', [
             'workouts' => $workouts,
@@ -67,7 +67,7 @@ class WorkoutController extends Controller
     public function edit($id)
     {
         $workout = Workout::find($id);
-        $types = Type::all();
+        $types = Type::where('category', 'workouts')->get();
 
         return view('workouts.edit', [
             'workout' => $workout,

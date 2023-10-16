@@ -5,7 +5,7 @@
                 Plans
             </h2>
             <div class="isolate inline-flex rounded-md shadow-sm">
-                <x-button href="/workouts/create" styles="indigo">
+                <x-button href="/plans/create" styles="indigo">
                     Create Plan
                 </x-button>
             </div>

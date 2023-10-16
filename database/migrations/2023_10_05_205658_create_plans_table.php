@@ -13,11 +13,11 @@ return new class extends Migration
             $table->unsignedInteger('type_id');
             $table->unsignedInteger('created_by');
             $table->string('title');
-            $table->string('level');
-            $table->string('category');
+            $table->string('level')->nullable();
+            $table->string('category')->nullable();
             $table->string('description')->nullable();
             $table->string('duration')->nullable();
-            $table->boolean('is_custom');
+            $table->boolean('is_custom')->nullable();
             $table->timestamps();
         });
     }

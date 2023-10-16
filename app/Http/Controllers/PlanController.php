@@ -17,7 +17,7 @@ class PlanController extends Controller
             })
             ->paginate(8);
 
-        $types = Type::all();
+        $types = Type::where('category', 'plans')->get();
 
         return view('plans.index', [
             'plans' => $plans,
@@ -67,7 +67,7 @@ class PlanController extends Controller
     public function edit($id)
     {
         $plan = Plan::find($id);
-        $types = Type::all();
+        $types = Type::where('category', 'plans')->get();
 
         return view('plans.edit', [
             'plan' => $plan,
