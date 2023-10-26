@@ -37,16 +37,15 @@ class PlanController extends Controller
     public function store()
     {
         $validated = request()->validate([
-            'date' => 'required',
-            'name' => 'nullable',
-            'music' => 'nullable',
-            'venue' => 'nullable',
-            'body_weight' => 'nullable',
-            'calories_burned' => 'nullable',
-            'length' => 'nullable',
-            'notes' => 'nullable',
+            'title' => 'required',
             'type_id' => 'required|exists:types,id',
+            'equipment' => 'nullable',
+            'level' => 'nullable',
+            'duration' => 'nullable',
+            'description' => 'nullable',
         ]);
+
+        $validated['created_by'] = auth()->user()->id;
 
         Plan::create($validated);
 
@@ -78,15 +77,12 @@ class PlanController extends Controller
     public function update($id)
     {
         $validated = request()->validate([
-            'date' => 'required',
-            'type' => 'required',
-            'name' => 'nullable',
-            'music' => 'nullable',
-            'venue' => 'nullable',
-            'body_weight' => 'nullable',
-            'calories_burned' => 'nullable',
-            'length' => 'nullable',
-            'notes' => 'nullable',
+            'title' => 'required',
+            'type_id' => 'required|exists:types,id',
+            'equipment' => 'nullable',
+            'level' => 'nullable',
+            'duration' => 'nullable',
+            'description' => 'nullable',
         ]);
 
         $plan = Plan::find($id);

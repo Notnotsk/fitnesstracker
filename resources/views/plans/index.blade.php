@@ -34,19 +34,19 @@
                                         {{ $plan->name ?? 'N/A' }}
                                     </a>
                                 </p>
-                                <p class="mt-1 flex text-xs leading-5 text-gray-500">
+                                {{-- <p class="flex mt-1 text-xs leading-5 text-gray-500">
                                     <a href="mailto:leslie.alexander@example.com" class="relative truncate hover:underline">{{ $plan->type->name ?? 'N/A' }}</a>
-                                </p>
+                                </p> --}}
                             </div>
                         </div>
-                        <div class="flex shrink-0 items-center gap-x-4">
+                        {{-- <div class="flex items-center shrink-0 gap-x-4">
                             <div class="hidden sm:flex sm:flex-col sm:items-end">
                                 <p class="text-sm leading-6 text-gray-900">{{ $plan->venue ?? 'N/A' }}</p>
                                 <p class="mt-1 text-xs leading-5 text-gray-500">{{ $plan->date->diffForHumans() }}
                                 </p>
                             </div>
-                            <x-svg.chevron-right class="h-5 w-5 flex-none text-gray-400" />
-                        </div>
+                            <x-svg.chevron-right class="flex-none w-5 h-5 text-gray-400" />
+                        </div> --}}
                     </li>
                 @endforeach
             @else
