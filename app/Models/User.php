@@ -13,6 +13,7 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     protected $fillable = [
+        'workout_id',
         'name',
         'email',
         'password',
@@ -30,5 +31,10 @@ class User extends Authenticatable
     public function plans()
     {
         return $this->belongsToMany(Plan::class);
+    }
+
+    public function workouts()
+    {
+        return $this->hasMany(Workout::class);
     }
 }

@@ -34,7 +34,7 @@ class Workout extends Model
 
     public function plans()
     {
-        return $this->belongsTo(Plan::class);
+        return $this->belongsToMany(Plan::class);
     }
 
     public function sets()
@@ -45,5 +45,10 @@ class Workout extends Model
     public function type()
     {
         return $this->belongsTo(Type::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

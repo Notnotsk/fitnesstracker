@@ -19,14 +19,14 @@ class Plan extends Model
 
     ];
 
+    public function createdBy()
+    {
+        return $this->belongsTo(User::class, 'created_by');
+    }
+
     public function exercises()
     {
         return $this->belongsToMany(Exercise::class);
-    }
-
-    public function workouts()
-    {
-        return $this->belongsToMany(Workout::class);
     }
 
     public function type()
@@ -37,5 +37,10 @@ class Plan extends Model
     public function users()
     {
         return $this->belongsToMany(User::class);
+    }
+
+    public function workouts()
+    {
+        return $this->belongsToMany(Workout::class);
     }
 }

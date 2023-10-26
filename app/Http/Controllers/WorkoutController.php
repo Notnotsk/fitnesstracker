@@ -48,6 +48,8 @@ class WorkoutController extends Controller
             'type_id' => 'required|exists:types,id',
         ]);
 
+        $validated['user_id'] = auth()->user()->id;
+
         Workout::create($validated);
 
         return redirect('/workouts');

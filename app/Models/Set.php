@@ -15,4 +15,14 @@ class Set extends Model
         'weight',
         'reps',
     ];
+
+    public function exercise()
+    {
+        return $this->belongsTo(Exercise::class);
+    }
+
+    public function workout()
+    {
+        return $this->belongsTo(Workout::class);
+    }
 }
