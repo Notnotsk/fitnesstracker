@@ -81,7 +81,6 @@ class WorkoutController extends Controller
     {
         $validated = request()->validate([
             'date' => 'required',
-            'type' => 'required',
             'name' => 'nullable',
             'music' => 'nullable',
             'venue' => 'nullable',
@@ -89,6 +88,7 @@ class WorkoutController extends Controller
             'calories_burned' => 'nullable',
             'length' => 'nullable',
             'notes' => 'nullable',
+            'type_id' => 'required|exists:types,id',
         ]);
 
         $workout = Workout::find($id);

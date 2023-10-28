@@ -80,7 +80,7 @@ class ExerciseController extends Controller
             'name' => 'required',
             'muscles' => 'nullable',
             'size' => 'nullable',
-            'type' => 'required',
+            'type_id' => 'required',
         ]);
 
         $exercise = Exercise::find($id);

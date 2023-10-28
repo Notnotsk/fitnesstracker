@@ -13,6 +13,8 @@ class Plan extends Model
         'type_id',
         'created_by',
         'title',
+        'level',
+        'equipment',
         'description',
         'duration',
         'is_custom',

@@ -23,9 +23,9 @@
                         <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:py-6">
                             <x-label class="sm:pt-1.5" for="type">Type</x-label>
                             <div class="mt-2 sm:col-span-2 sm:mt-0">
-                                <x-select name="type_id" id="type" :value="old('type', $workout->type_id)">
+                                <x-select name="type_id" id="type" :value="old('type_id', $plan->type_id)">
                                     @foreach ($types as $type)
-                                        <option value="{{ $type->id }}" @selected(old('type', $workout->type_id) == $type->id)>
+                                        <option value="{{ $type->id }}" @selected(old('type_id', $plan->type_id) == $type->id)>
                                             {{ $type->name }}
                                         </option>
                                     @endforeach
@@ -76,7 +76,7 @@
                         <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:py-6">
                             <x-label class="sm:pt-1.5" for="description">Description</x-label>
                             <div class="mt-2 sm:col-span-2 sm:mt-0">
-                                <textarea id="description" name="description" rows="3" value="{{ old('description') }}" class="block w-full max-w-lg rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6"></textarea>
+                                <textarea id="description" name="description" rows="3" class="block w-full max-w-lg rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6">{{ old('description', $plan->description) }}</textarea>
                                 <p class="mt-2 text-sm text-gray-500">Write a few sentences about this plan.</p>
                             </div>
                         </div>

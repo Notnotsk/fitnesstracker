@@ -23,6 +23,7 @@
                             <x-label class="sm:pt-1.5" for="type">Type</x-label>
                             <div class="mt-2 sm:col-span-2 sm:mt-0">
                                 <x-select name="type_id" id="type" :value="old('type_id')">
+                                    <option></option>
                                     @foreach ($types as $type)
                                         <option value="{{ $type->id }}">{{ $type->name }}</option>
                                     @endforeach
