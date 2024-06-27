@@ -19,11 +19,9 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('exercises', ExerciseController::class);
     Route::resource('plans', PlanController::class);
-    Route::resource('workouts', WorkoutController::class);
     Route::resource('sets', SetController::class)->except(['index', 'show', 'destroy']);
-    Route::name('workouts.')->group(function () {
-        Route::resource('workouts/{workout}/exercises', WorkoutExerciseController::class);
-    });
+    Route::resource('workouts', WorkoutController::class);
+    Route::resource('workouts/{workout}/exercises', WorkoutExerciseController::class)->only(['create', 'store']);
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

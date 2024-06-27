@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Type;
 use App\Models\Exercise;
+use App\Models\Type;
 
 class ExerciseController extends Controller
 {

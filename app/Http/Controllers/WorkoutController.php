@@ -37,14 +37,14 @@ class WorkoutController extends Controller
     public function store()
     {
         $validated = request()->validate([
-            'date' => 'required',
-            'name' => 'nullable',
-            'music' => 'nullable',
-            'venue' => 'nullable',
-            'body_weight' => 'nullable',
-            'calories_burned' => 'nullable',
+            'date' => 'required|date|before_or_equal:now',
+            'name' => 'nullable|max:255',
+            'music' => 'nullable|max:255',
+            'venue' => 'nullable|max:255',
+            'body_weight' => 'nullable|string|max:10',
+            'calories_burned' => 'nullable|integer|min:0',
             'length' => 'nullable',
-            'notes' => 'nullable',
+            'notes' => 'nullable|max:1000',
             'type_id' => 'required|exists:types,id',
         ]);
 
@@ -55,20 +55,15 @@ class WorkoutController extends Controller
         return redirect('/workouts');
     }
 
-    public function show($id)
+    public function show(Workout $workout)
     {
-        $workout = Workout::with(['exercises.sets' => function ($query) use ($id) {
-            $query->where('workout_id', $id);
-        }])->find($id);
-
         return view('workouts.show', [
             'workout' => $workout,
         ]);
     }
 
-    public function edit($id)
+    public function edit(Workout $workout)
     {
-        $workout = Workout::find($id);
         $types = Type::where('category', 'workouts')->get();
 
         return view('workouts.edit', [
@@ -77,29 +72,27 @@ class WorkoutController extends Controller
         ]);
     }
 
-    public function update($id)
+    public function update(Workout $workout)
     {
         $validated = request()->validate([
-            'date' => 'required',
-            'name' => 'nullable',
-            'music' => 'nullable',
-            'venue' => 'nullable',
-            'body_weight' => 'nullable',
-            'calories_burned' => 'nullable',
+            'date' => 'required|date|before_or_equal:now',
+            'name' => 'nullable|max:255',
+            'music' => 'nullable|max:255',
+            'venue' => 'nullable|max:255',
+            'body_weight' => 'nullable|string|max:10',
+            'calories_burned' => 'nullable|integer|min:0',
             'length' => 'nullable',
-            'notes' => 'nullable',
+            'notes' => 'nullable|max:1000',
             'type_id' => 'required|exists:types,id',
         ]);
 
-        $workout = Workout::find($id);
         $workout->update($validated);
 
-        return redirect('/workouts/' . $id);
+        return redirect('/workouts/' . $workout->id);
     }
 
-    public function destroy($id)
+    public function destroy(Workout $workout)
     {
-        $workout = Workout::find($id);
         $workout->delete();
 
         return redirect('/workouts');

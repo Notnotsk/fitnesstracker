@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('venue')->nullable();
             $table->integer('body_weight')->nullable();
             $table->integer('calories_burned')->nullable();
-            $table->integer('length')->nullable();
+            $table->string('length')->nullable();
             $table->text('notes')->nullable();
             $table->timestamps();
         });
