@@ -11,7 +11,8 @@ class PlanController extends Controller
     {
         $typeId = request('type_id');
 
-        $plans = Plan::with('type')
+        $plans = Plan::auery()
+            ->with('type')
             ->when($typeId, function ($query, $typeId) {
                 return $query->where('type_id', $typeId);
             })
@@ -37,12 +38,12 @@ class PlanController extends Controller
     public function store()
     {
         $validated = request()->validate([
-            'title' => 'required',
+            'title' => 'required|max:255',
             'type_id' => 'required|exists:types,id',
-            'equipment' => 'nullable',
+            'equipment' => 'nullable|max:255',
             'level' => 'nullable',
-            'duration' => 'nullable',
-            'description' => 'nullable',
+            'duration' => 'nullable|max:255',
+            'description' => 'nullable|max:1000',
         ]);
 
         $validated['created_by'] = auth()->user()->id;
@@ -52,20 +53,19 @@ class PlanController extends Controller
         return redirect('/plans');
     }
 
-    public function show($id)
+    public function show(Plan $plan)
     {
-        $plan = Plan::with(['exercises.sets' => function ($query) use ($id) {
-            $query->where('plan_id', $id);
-        }])->find($id);
+        $plan->load(['exercises.sets' => function ($query) use ($plan) {
+            $query->where('plan_id', $plan->id);
+        }]);
 
         return view('plans.show', [
             'plan' => $plan,
         ]);
     }
 
-    public function edit($id)
+    public function edit(Plan $plan)
     {
-        $plan = Plan::find($id);
         $types = Type::where('category', 'plans')->get();
 
         return view('plans.edit', [
@@ -74,26 +74,24 @@ class PlanController extends Controller
         ]);
     }
 
-    public function update($id)
+    public function update(Plan $plan)
     {
         $validated = request()->validate([
-            'title' => 'required',
+            'title' => 'required|max:255',
             'type_id' => 'required|exists:types,id',
-            'equipment' => 'nullable',
+            'equipment' => 'nullable|max:255',
             'level' => 'nullable',
-            'duration' => 'nullable',
-            'description' => 'nullable',
+            'duration' => 'nullable|max:255',
+            'description' => 'nullable|max:1000',
         ]);
 
-        $plan = Plan::find($id);
         $plan->update($validated);
 
-        return redirect('/plans/' . $id);
+        return redirect('/plans/' . $plan->id);
     }
 
-    public function destroy($id)
+    public function destroy(Plan $plan)
     {
-        $plan = Plan::find($id);
         $plan->delete();
 
         return redirect('/plans');

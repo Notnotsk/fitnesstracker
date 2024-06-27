@@ -10,6 +10,7 @@ return new class extends Migration
     {
         Schema::create('workouts', function (Blueprint $table) {
             $table->id();
+            $table->unsignedInteger('user_id');
             $table->unsignedInteger('type_id');
             $table->date('date');
             $table->string('name')->nullable();

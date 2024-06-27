@@ -25,7 +25,12 @@ class WorkoutExerciseController extends Controller
             'notes' => 'nullable',
         ]);
 
-        $workout->exercises()->attach($validated['exercise_id'], ['notes' => $validated['notes']]);
+        $workout->exercises()->attach(
+            $validated['exercise_id'],
+            [
+                'notes' => $validated['notes']
+            ]
+        );
 
         return redirect('/workouts/' . $workout->id);
     }

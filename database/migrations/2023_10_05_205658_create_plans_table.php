@@ -15,7 +15,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('level')->nullable();
             $table->string('category')->nullable();
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             $table->string('duration')->nullable();
             $table->boolean('is_custom')->nullable();
             $table->timestamps();

@@ -11,7 +11,8 @@ class WorkoutController extends Controller
     {
         $typeId = request('type_id');
 
-        $workouts = Workout::with('type')
+        $workouts = Workout::query()
+            ->with('type')
             ->when($typeId, function ($query, $typeId) {
                 return $query->where('type_id', $typeId);
             })

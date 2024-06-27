@@ -14,36 +14,33 @@ class SetController extends Controller
     public function store()
     {
         $validated = request()->validate([
-            'workout_id' => 'required',
-            'exercise_id' => 'required',
-            'weight' => 'nullable',
-            'reps' => 'required',
+            'workout_id' => 'required|integer|exists:workouts,id',
+            'exercise_id' => 'required|integer|exists:exercises,id',
+            'weight' => 'nullable|numeric|min:0',
+            'reps' => 'required|integer|min:1',
         ]);
 
         Set::create($validated);
 
-        return redirect('/workouts/'.$validated['workout_id']);
+        return redirect('/workouts/' . $validated['workout_id']);
     }
 
-    public function edit($id)
+    public function edit(Set $set)
     {
-        $set = Set::find($id);
-
         return view('sets.edit', [
             'set' => $set,
         ]);
     }
 
-    public function update($id)
+    public function update(Set $set)
     {
         $validated = request()->validate([
-            'weight' => 'nullable',
-            'reps' => 'required',
+            'weight' => 'nullable|numeric|min:0',
+            'reps' => 'required|integer|min:1',
         ]);
 
-        $set = Set::find($id);
         $set->update($validated);
 
-        return redirect('/workouts/'.$set->workout_id);
+        return redirect('/workouts/' . $set->workout_id);
     }
 }

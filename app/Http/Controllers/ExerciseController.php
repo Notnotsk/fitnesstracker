@@ -11,7 +11,8 @@ class ExerciseController extends Controller
     {
         $typeId = request('type_id');
 
-        $exercises = Exercise::withCount('sets')
+        $exercises = Exercise::query()
+            ->withCount('sets')
             ->when($typeId, function ($query, $typeId) {
                 return $query->where('type_id', $typeId);
             })
@@ -41,8 +42,9 @@ class ExerciseController extends Controller
     public function store()
     {
         $validated = request()->validate([
-            'name' => 'required',
+            'name' => 'required|max:255',
             'muscles' => 'nullable|array',
+            'muscles.*' => 'integer|exists:muscles,id',
             'size' => 'nullable',
             'type_id' => 'required|exists:types,id',
         ]);
@@ -52,18 +54,15 @@ class ExerciseController extends Controller
         return redirect('/exercises');
     }
 
-    public function show($id)
+    public function show(Exercise $exercise)
     {
-        $exercise = Exercise::find($id);
-
         return view('exercises.show', [
             'exercise' => $exercise,
         ]);
     }
 
-    public function edit($id)
+    public function edit(Exercise $exercise)
     {
-        $exercise = Exercise::find($id);
         $muscles = $exercise->getMuscles();
         $types = Type::where('category', 'exercises')->get();
 
@@ -74,24 +73,23 @@ class ExerciseController extends Controller
         ]);
     }
 
-    public function update($id)
+    public function update(Exercise $exercise)
     {
         $validated = request()->validate([
-            'name' => 'required',
-            'muscles' => 'nullable',
+            'name' => 'required|max:255',
+            'muscles' => 'nullable|array',
+            'muscles.*' => 'integer|exists:muscles,id',
             'size' => 'nullable',
-            'type_id' => 'required',
+            'type_id' => 'required|exists:types,id',
         ]);
 
-        $exercise = Exercise::find($id);
         $exercise->update($validated);
 
-        return redirect('/exercises/' . $id);
+        return redirect('/exercises/' . $exercise->id);
     }
 
-    public function destroy($id)
+    public function destroy(Exercise $exercise)
     {
-        $exercise = Exercise::find($id);
         $exercise->delete();
 
         return redirect('/exercises');
