@@ -26,13 +26,6 @@
                             <x-input type="datetime-local" name="date" id="date" :value="old('date') ?? now()->format('Y-m-d\TH:i')" />
                         </div>
                     </div>
-                    {{-- <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:py-6">
-                        <x-label class="sm:pt-1.5" for="length">Length</x-label>
-                        <div class="mt-2 sm:col-span-2 sm:mt-0">
-                            <x-input type="number" name="length" id="length" autocomplete="length"
-                                :value="old('length')" placeholder="minutes" />
-                        </div>
-                    </div> --}}
                     <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:py-6">
                         <x-label class="sm:pt-1.5" for="name">Name</x-label>
                         <div class="mt-2 sm:col-span-2 sm:mt-0">
@@ -54,20 +47,6 @@
                                 :value="old('body_weight')" placeholder="lbs" />
                         </div>
                     </div>
-                    {{-- <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:py-6">
-                        <x-label class="sm:pt-1.5" for="calories_burned">Calories Burned</x-label>
-                        <div class="mt-2 sm:col-span-2 sm:mt-0">
-                            <x-input type="number" name="calories_burned" id="calories_burned"
-                                autocomplete="calories_burned" :value="old('calories_burned')" />
-                        </div>
-                    </div> --}}
-                    {{-- <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:py-6">
-                        <x-label class="sm:pt-1.5" for="music">Music</x-label>
-                        <div class="mt-2 sm:col-span-2 sm:mt-0">
-                            <x-input type="text" name="music" id="music" autocomplete="music"
-                                :value="old('music')" />
-                        </div>
-                    </div> --}}
                     <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:py-6">
                         <x-label for="preworkout_notes">Preworkout Notes</x-label>
                         <div class="mt-2 sm:col-span-2 sm:mt-0">
